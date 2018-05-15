@@ -96,7 +96,7 @@ var jaxx;
         // DCL interface  returns price ether form download data or from config file
         MiningFeeController.prototype.getMiningFeePerByte = function () {
             if (!this.config.useMiningFeeApi && this.config.miningFeePerByte)
-                return this.config.miningFeePerByte;
+                return this.config.symbol === 'BCH' ? 1 : this.config.miningFeePerByte;
             return this.getMiningFee();
         };
         MiningFeeController.prototype.getMiningFee = function () {

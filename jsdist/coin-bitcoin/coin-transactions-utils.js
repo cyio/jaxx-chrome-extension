@@ -335,6 +335,7 @@ var jaxx;
             tx.to(addressTo, +toSendSatoshi);
             if (changeSatoshi)
                 tx.change(changeAddress);
+            miningFeeSatoshiAfter = String(Math.max(Number(miningFeeSatoshiAfter), 192))
             tx.fee(Number(miningFeeSatoshiAfter));
             spentUTXOs.forEach(function (input) {
                 var inputObj = {
@@ -351,7 +352,7 @@ var jaxx;
                 var signKey = bitcore.PrivateKey.fromWIF(pk.toWIF());
                 tx.sign(signKey.toString());
             });
-            var serialized = tx.serialize();
+            var serialized = tx.serialize({disableSmallFees: true, disableDustOutputs: true});
             var VO = tx.toJSON();
             var size = serialized.length / 2 + spentUTXOs.length * 107;
             var targetTransactionFee = jaxx.MATH.multiplay([String(Math.ceil(size / 1024)), String(miningFeeInt)]);
