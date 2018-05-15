@@ -1,0 +1,15 @@
+<div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+<div class="scriptAction cssHeader header" popSettings="true">Transfer Paper Wallet
+    <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+</div>
+<div class="settingsResetCache scriptAction cssOpacity cssExpandableText expandableText expandableDetailsAncestor">
+    <div class="expandableDetailsElement cssSweepPrivateKeyDetails" expandedheight='[[350, "290px"], [500, "250px"], [2000, "140px"]]'> <!-- cssExpandableDetailsHeader -->
+        <div class="toggler cssToggler">
+            <p class="cssIntroScreenHeading">On the next screen, please scan the private key (QR Code) in order to send funds into Jaxx. Alternatively, you can type in your private key.</p>
+            <p class="cssIntroScreenHeading">Please avoid using your private key again after transferring your funds.</p>
+        </div>
+    </div>
+</div>
+<div class="cssCenter cssBackContinue">
+    <div class="scriptAction cssEnabled cssBtnIntroRight understandButton" pushSettings="sweepPrivateKey" specialAction="jaxx_ui.preparePrivateKeySweep" clearValue=".settings.sweepPrivateKey .amount"> <span class="cssTextFeedback">I Understand</span> </div>
+</div>

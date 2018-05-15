@@ -1,0 +1,29 @@
+    <div class="cssSendConfirmation cssNotificationFooter
+     notificationFooter cssgreenBackgroundColor">
+        <div class="modal-title"> <span class="title">Send Confirmation</span> </div>
+        <div class="modal-body">
+            <div class="modal-body-top">Send: <span class="cssAmount">
+                <span class="amount">{{amount}} {{symbol}} {{alternate_amount}}</span>
+            </span>
+            </div>
+            <div class="modal-body-middle">
+                <div class="modal-body-middle-title"> Receiving Address </div>
+                <span class="address cssCodeAddress">{{addressTo}}</span>
+            </div>
+            <div class="modal-body-bottom">
+                <div class="modal-body-bottom-title mining-fee-title">Mining Fee:
+                    <span class="computedFeeText cssComputedFeeText">{{miningFee}}</span>
+                    <span class="miningFeeAbbreviatedName cssMiningFeeAbbreviatedName">{{miningFeeSymbol}}</span>
+                </div>
+                <div class="miningFeeDescription cssMiningFeeDescription modal-body-bottom-description"></div>
+            </div>
+        </div>
+        <div class="modal-footer cssCenter cssItem cssBackContinue">
+            <div data-click="Cancel" class="greenButtonIntroLeft">
+                <span class="cssTextFeedback">Cancel</span>
+            </div>
+            <div data-click="Confirm" class="greenButtonIntroRight" id="sendConfirmationButton">
+                <span class="cssTextFeedback">Confirm</span>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,17 @@
+.jaxx-modal{
+    background-color: #0D0D0D;
+}
+
+.jaxx-modal .footer .button{
+    font-weight: 600;
+    color: white;
+}
+
+.jaxx-modal .footer .button:hover{
+    color: #2B2B2B;
+}
+
+
+.text-alert{
+    color: red;
+}

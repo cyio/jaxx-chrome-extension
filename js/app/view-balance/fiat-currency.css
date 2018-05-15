@@ -1,0 +1,16 @@
+#BalanceView {
+    position: relative;
+    z-index: 19;
+}
+
+#FiatSelector {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cssWrapTableCurrencySelectionMenu {
+    margin-left: 0px;
+    margin-top: 5px;
+}
+

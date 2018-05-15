@@ -1,0 +1,21 @@
+<div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+<div class="scriptAction cssHeader" popSettings="true">PAIR / RESTORE WALLET
+    <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+</div>
+<div class="cssbackupTab2 cssSB2">
+    <section class="wow-animated-flash">
+        <div class="cssCenter">
+            <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </div>
+    </section>
+    <p>Pairing a new wallet will replace your current wallet and lose access to your associated funds. </p>
+    <p>If you have not already done so, please write down your current wallet's Backup Phrase before pairing your new wallet.</p>
+</div>
+<!--
+<div class="cssItem cssCenter">
+<div class="scriptAction cssBlueButtonWidePairAnotherDevice cssEnabled">I Understand</div>
+</div> -->
+<div class="cssItem cssCenter cssBackContinue">
+    <div class="scriptAction cancelButton cssBtnIntroLeft" popsettings="true"> <span class="cssTextFeedback">Cancel</span> </div>
+    <div class="pairDeviceShowMnemonicCount cssTimerCountDown">TIMER</div>
+    <div class="scriptAction cssBtnIntroRight" specialAction="jaxx_controller.resetPairFromDeviceInput" pushSettings="loadJaxxToken"> <span class="cssTextFeedback">I UNDERSTAND</span> </div>
+</div>

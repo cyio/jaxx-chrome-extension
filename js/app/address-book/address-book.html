@@ -1,0 +1,143 @@
+<script id="main" type="text/template">
+    <div class="view-port">
+       <div></div>
+    </div>
+
+</script>
+
+<script id="list" type="text/template">
+    <div class="menu-page">
+        <div class="imageReturn cssImageReturn" data-action="back"></div>
+        <div class="cssHeader heading header" >Address BOOK List
+            <div class="cssClose"  data-action="back">x</div>
+        </div>
+
+        <div class="content">
+            <ul class="list-group scrollable">
+
+            </ul>
+        </div>
+
+        <div class="cssCenter cssBackContinue" data-action="addAddress">
+            <div class="sweepNextButton pairDeviceShowMnemonicButton cssBtnIntroRight"><span  class="cssTextFeedback" >Add Address</span></div>
+        </div>
+    </div>
+</script>
+
+<script id="AddressBookInputs" type="text/template">
+
+        <div class="imageReturn cssImageReturn" data-action="back"></div>
+        <div class="cssHeader heading header" >Address book Input
+            <div class="cssClose"  data-action="back">x</div>
+        </div>
+
+        <br/>
+        <div class="content">
+            <div class="input-group">
+
+                <div class="input-group-item">
+                    <div>Label (for your own reference):</div>
+
+                    <input data-input="label"  placeholder="Enter Name" autocorrect="off" autocapitalize="none" minlength="2" maxlength="25" autocomplete="off" />
+                    <div data-view="hintLabel" class="text-alert hidden">
+                        Minimum label length 2 chars
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="input-group-item">
+                    <div>Address:</div>
+                    <input data-input="address" class="text-small-1x" placeholder="Enter Address" autocorrect="off" autocapitalize="none" minlength="10" maxlength="45" autocomplete="off" />
+                    <div data-view="hintAddress" class="text-alert hidden">
+                        Minimum Address length 10 chars
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="cssCenter cssBackContinue">
+            <div class="sweepNextButton pairDeviceShowMnemonicButton cssBtnIntroLeft" data-action="back"><span class="cssTextFeedback" >Cancel</span></div>
+
+            <div class="sweepNextButton pairDeviceShowMnemonicButton cssBtnIntroRight" data-action="save"><span  class="cssTextFeedback" >Save</span></div>
+
+        </div>
+
+
+</script>
+
+
+<script id="list-item" type="text/template">
+
+<div class="">
+    <div class="item-container jaxx-scroll">
+        <div>
+            {{label}}
+        </div>
+        <div>
+            <small>
+                {{address}}
+            </small>
+
+        </div>
+    </div>
+
+
+    <div class="menu-container">
+
+        <ul class="popup-menu list-group hidden" >
+            <li data-action="edit">
+                Edit
+            </li>
+
+            <li data-action="delete">
+                Delete
+            </li>
+        </ul>
+
+
+        <div class="">
+            <div data-action="copy" class="btn-copy">
+
+            </div>
+
+            &nbsp;
+            <div  class="options">
+
+                    <img src="images/dragAndDrop.svg" alt="" height="13" width="13" >
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</script>
+
+
+<script id="confirm" type="text/template">
+    <div class="jaxx-modal resetJaxxCache cssModal cssScanPrivate">
+        <div class="cssContent">
+        <div class="header">
+                <span>{{title}}</span><span></span>
+    </div>
+    <p> {{message}} </p>
+
+    <div class="cssCenter cssItem footer">
+        <a class="button left"  data-action="CANCEL"> <span class="cssTextFeedback">CANCEL</span> </a>
+        <a data-action="OK" class="button right" closeModal="true" specialAction="resetCache"> <span class="cssTextFeedback">DELETE</span> </a>
+    </div>
+    </div>
+    </div>
+</script>

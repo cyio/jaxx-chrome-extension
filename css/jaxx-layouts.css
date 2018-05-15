@@ -1,0 +1,8 @@
+.row{
+    flex: auto;
+}
+
+.row .col-1{
+
+    @extend .col
+}

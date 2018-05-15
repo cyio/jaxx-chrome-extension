@@ -1,0 +1,61 @@
+
+    <div class="closeBox cssCloseBox scriptAction" specialAction='toggleMainMenu'> </div>
+    <!--
+<div class="cssItem cssMenuHeading scriptAction" specialAction="toggleMainMenuOff">
+<img src="images/menu.svg" alt="" height="12" width="12" style="margin-right:5px;">
+<span style="margin-left:3px;">Menu</span>
+</div>
+-->
+    <div class="menuTypeOptions cssMenuWindowOptions cssSelected">
+        <div class="cssMenuWindowOptionItem menuWindowOptionMenu scriptAction" value="menu" specialAction="enableOptionTab"> MENU </div>
+        <div class="cssMenuWindowOptionItem menuWindowOptionWallets scriptAction" value="wallets" specialAction="enableOptionTab"> WALLETS </div>
+        <div id="CurrenciesMenuTab" class="cssMenuWindowOptionItem menuWindowOptionCurrencies scriptAction" value="currencies" specialAction="enableOptionTab"> CURRENCY </div>
+        <div class="cssUnderline"></div>
+    </div>
+    <div class="cssActiveWindow">
+        <div class='mainMenuMenu cssMainMenuWindow cssMainMenuMenu cssSelected'>
+            <div class="scriptAction cssItem" pushSettings="toolsPage"> <img src="images/wrench.svg" alt="" height="13" width="13" style="position:absolute; margin-right:5px; padding-top:16px;"> <span style="margin-left:25px;">Tools</span></div>
+            <div class="scriptAction cssItem" pushSettings="settingsPage"> <img src="images/gear.svg" alt="" height="13" width="13" style="position:absolute; margin-right:5px; padding-top:16px;"> <span style="margin-left:25px;">Settings</span></div>
+            <div class="scriptAction cssItem" pushSettings="helpPage"> <img src="images/help.svg" alt="" height="13" width="13" style="position:absolute; margin-right:5px; padding-top:16px;"> <span style="margin-left:25px;">Help</span></div>
+            <div class="scriptAction cssItem" pushSettings="bulletinPage"> <img src="images/news.svg" alt="" height="13" width="13" style="position:absolute; margin-right:5px; margin-top:16px;"> <span style="margin-left:25px;">Bulletin</span></div>
+            <div class="scriptAction cssItem" pushSettings="aboutPage"> <img src="images/glass.svg" alt="" height="13" width="13" style="position:absolute; margin-right:5px; margin-top:16px;"> <span style="margin-left:25px;">About</span></div>
+        </div>
+        <div class='mainMenuWallets cssMainMenuWindow cssMainMenuWallets'>
+            <!--Change CryptoCurrency Panel-->
+            <!-- <div>
+<div class="cssCenter cssExchangeRate">
+1.00 <span class="exchangeRateAbbreviatedUnit">BTC</span> = <span class="exchangeRate"></span>
+</div>
+</div> -->
+            <div id="mainMenuWalletsElement" class="cssList">
+                <table class="coinList cssCoinList" cellspacing=0>
+                    <tbody>
+                    <!-- Elements like the following will be generated programmatically: -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- </div> -->
+            <!--Change CryptoCurrency Panel Ends-->
+        </div>
+        <div class='mainMenuCurrencies cssMainMenuWindow cssMainMenuCurrencies cssSettings cssSetCurrency'>
+            <!--Change Currency Panel-->
+            <!-- <div class="settings setCurrency cssSettings cssSetCurrency cssBackup"> -->
+            <div>
+                <!-- <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div> -->
+                <!-- <div class="scriptAction cssHeader" popSettings="true">Select Display Currencies -->
+                <!-- <div class="cssClose scriptAction" clearSettings="true">x</div></div> -->
+                <div class="cssCenter cssExchangeRate"> 1.00 <span class="exchangeRateAbbreviatedUnit">BTC</span> = <span class="exchangeRate"></span> </div>
+            </div>
+            <div class="cssList">
+                <table class="exchangeRateList cssExchangeRateList" cellspacing=0>
+                    <tbody>
+                    <!-- Elements like the following will be generated programmatically:
+<tr class="currency cssCurrency toggleCurrency scriptAction" value="AUD"><td class="cssSelectedCurrency"><div class="cssCircleUnchecked"></div></td> <td class="cssUnit">AUD</td><td class="name">Australian Dollar</td><td class="rate rateAUD"> </td></tr>
+<tr class="currency cssCurrency toggleCurrency scriptAction" value="BRL"> <td class="cssSelectedCurrency"><div class="cssCircleUnchecked"></div></td><td class="cssUnit">BRL</td><td class="name">Brazilian Real</td><td class="rate rateBRL"> </td></tr>	-->
+                    </tbody>
+                </table>
+            </div>
+            <!-- </div> -->
+            <!--Change Currency Panel Ends-->
+        </div>
+    </div>

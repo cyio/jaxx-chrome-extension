@@ -1,0 +1,43 @@
+<div class="cssShapeShiftConfirmation cssNotificationFooter notificationFooter cssgreenBackgroundColor">
+    <div class="modal-title">
+        <div class="modal-logo"></div>
+        <span class="title">ShapeShift Confirmation</span>
+    </div>
+    <div class="modal-body">
+        <div class="modal-body-top conversionConfirmation confirmationBox">
+            <div class="cssAmount confirmationValue">
+                <div class="subtitle">Exchanging</div>
+                <div class="amountSend floatLeft">{{convertAmountFrom}}</div>
+                <div class="amountAbbreviatedNameSend cssUnit floatLeft">{{convertSymbolFrom}}</div>
+                <br>
+                <div class="amountAbbreviatedNameSend cssUnit subtitle">{{alternateAmount}}</div>
+            </div>
+            <img class="confirmationArrow" src="images/ui_elements/confirmation-arrow.svg">
+            <div class="cssAmount confirmationValue">
+                <div class="subtitle">For</div>
+                <div class="amountReceive floatLeft">{{convertAmountTo}}</div>
+                <div class="amountAbbreviatedNameReceive cssUnit floatLeft">{{convertSymbolTo}}</div>
+            </div>
+        </div>
+        <div class="modal-body-bottom smallPadding">
+            <div class="modal-body-bottom-title mining-fee-title">Mining Fee: <span class="computedFeeText">{{miningFee}}</span>
+                <span class="miningFeeAbbreviatedName">{{miningFeeSymbol}}</span></div>
+            <div class="cssNotice">
+                <div class="cssModalTermsText">
+                    <span>This service is operated by ShapeShift.io and not by Jaxx.</span>
+                    <span><a
+                            href="https://info.shapeshift.io/sites/default/files/ShapeShift_Terms_Conditions%20v1.1.pdf"
+                            target="_blank">ShapeShift’s Terms and Conditions</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer cssCenter cssItem cssBackContinue">
+        <div data-click="Cancel" class="greenButtonIntroLeft">
+            <span class="cssTextFeedback">Cancel</span>
+        </div>
+        <div data-click="Confirm" class="greenButtonIntroRight">
+            <span class="cssTextFeedback">Confirm</span>
+        </div>
+    </div>
+</div>

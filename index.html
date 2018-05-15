@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JAXX</title>
+
+    <link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="setup.css">
+    <link rel="stylesheet" type="text/css" href="images.css">
+    <!--Files for Animation-->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <!-- Stylesheet for the carousel -->
+    <link rel="stylesheet" type="text/css" href="css/flickity.css">
+    <link rel="stylesheet" type="text/css" href="css/network.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/jaxx-menu-pages.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-layouts.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-animations.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-lists.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-forms.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-modals.css">
+    <link rel="stylesheet" type="text/css" href="css/jaxx-colors.css">
+
+    <!-- Insert this line above script imports  -->
+    <!-- Below line is needed for electron -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- third party libraries -->
+    <script type="text/javascript" src="js/thirdparty/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/lodash.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/moment.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/jquery-ui-1.12.0.custom/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/big.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/hammer.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/wow.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/aes.js"></script>
+    <script type="text/javascript" src="js/thirdparty.js"></script>
+    <script type="text/javascript" src="js/bitcore.js"></script>
+    <script type="text/javascript" src="js/thirdparty/jquery.tinycarousel.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/toastr.js"></script>
+    <script type="text/javascript" src="js/thirdparty/flickity.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/Bignumber.js"></script>
+    <script type=text/javascript src="js/platform/platformUtils.js"></script>
+    <script type=text/javascript src="js/platform/platformAndroid.js"></script>
+    <script type=text/javascript src="js/platform/platformIOS.js"></script>
+    <!--<script type=text/javascript src="js/jaxx_main/jaxx_constants.js"></script>-->
+    <script type=text/javascript src="js/utils/util.js"></script>
+    <script type=text/javascript src="js/utils/cacheUtils.js"></script>
+    <script type=text/javascript src="js/utils/jaxx_utils.js"></script>
+    <script type="text/javascript" src="test/jquery-event-log.js"></script>
+
+    <script type="text/javascript" src="jsdist/app/jaxx-animations.js"></script>
+
+  <!--  <script type="text/javascript" src="js/network.js"></script>-->
+   <!--<script type="text/javascript" src="js/request.js"></script>-->
+   <!-- <script type="text/javascript" src="js/toolbox.js"></script>-->
+
+    <style type="text/css">
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/f04ad902-1234-4690-8748-f3048d1d3ef8.eot?#iefix") format("eot")
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/f04ad902-1234-4690-8748-f3048d1d3ef8.eot?#iefix");
+            src: url("fonts/avenir_next/f04ad902-1234-4690-8748-f3048d1d3ef8.eot?#iefix") format("eot"), url("fonts/avenir_next/e9d52683-5053-45e1-9811-004ca9e60c14.woff2") format("woff2"), url("fonts/avenir_next/8d0fed50-3b45-4c8c-9f94-953751853648.woff") format("woff"), url("fonts/avenir_next/24d8aeef-b72f-478f-bbbb-b7bf5e2142a7.ttf") format("truetype"), url("fonts/avenir_next/3cb6fc59-7061-4578-aaaf-3362e5e47ae7.svg#3cb6fc59-7061-4578-aaaf-3362e5e47ae7") format("svg");
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/b0751211-e805-4138-b7f2-a31031582ce2.eot?#iefix") format("eot")
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/b0751211-e805-4138-b7f2-a31031582ce2.eot?#iefix");
+            src: url("fonts/avenir_next/b0751211-e805-4138-b7f2-a31031582ce2.eot?#iefix") format("eot"), url("fonts/avenir_next/178ff15e-1d83-46d6-a191-80d443177813.woff2") format("woff2"), url("fonts/avenir_next/6a091542-e5b3-4c09-ad72-8aed56a6581e.woff") format("woff"), url("fonts/avenir_next/4130ee5f-67da-4bcd-bde2-e97df5e49432.ttf") format("truetype"), url("fonts/avenir_next/c6ed70fd-bd2c-439f-aad2-23dd803f9869.svg#c6ed70fd-bd2c-439f-aad2-23dd803f9869") format("svg");
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot")
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix");
+            src: url("fonts/avenir_next/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot"), url("fonts/avenir_next/49c5f3e1-5867-4b1d-a843-2d07fa60d85d.woff2") format("woff2"), url("fonts/avenir_next/f401df6f-54eb-406c-b46a-90b9451c598d.woff") format("woff"), url("fonts/avenir_next/276fe25e-e430-4376-b33c-705dd77b3dba.ttf") format("truetype"), url("fonts/avenir_next/869dc33b-3685-4d74-a51c-82b435579093.svg#869dc33b-3685-4d74-a51c-82b435579093") format("svg");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Avenir Next";
+            src: url("fonts/avenir_next/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+            src: url("fonts/avenir_next/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"), url("fonts/avenir_next/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"), url("fonts/avenir_next/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"), url("fonts/avenir_next/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype"), url("fonts/avenir_next/52a192b1-bea5-4b48-879f-107f009b666f.svg#52a192b1-bea5-4b48-879f-107f009b666f") format("svg");
+            font-weight: 500;
+            font-style: normal;
+        }
+
+
+
+        /*TEST ONLY*/
+
+        #RestoreHistoryBtn{
+            opacity: 0.01;
+            transform: translate(300px, -20px);
+            height: 1em;
+            width: 4em;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+
+        .cssSuspendOverlay{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color:  rgba(3,3,3,0.5);
+        }
+
+        /*END TEST ONLY*/
+
+    </style>
+
+    <script id="ConfirmTemplate" type="text/template">
+        <div  class="cssCenter cssBackContinue anim hidden alert">
+            <div class="cssInnerBoxCallToAction">
+                <a class="cssBtnCancel btn left btnCancel">DECLINE</a>
+                <a class="scriptAction btn cssBtnIntroRight btnContinue"> <span class="cssTextFeedback">ACCEPT</span> </a>
+            </div>
+        </div>
+
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="js/jaxx_main/jaxx_ui/jaxx_ui.js"></script>
+    <script src="js/wallet/hdwallet_helper.js"></script>
+    <script src="js/jaxx_main/jaxx_settings.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <!-- Below line is needed for electron -->
+    <script>if (window.module) module = window.module;</script>
+
+</head>
+
+<body id="body" >
+    <!-- We use this to copy things to the clipboard -->
+    <textarea style="position: absolute; left: -1000px; width: 100px" readonly="true" id="clipboard"></textarea>
+    <!-- Hamburger Menu Icon -->
+    <section id="HamburgerMenu" class="scriptAction material-design-hamburger hamburger cssHamburger" specialAction="toggleMainMenu">
+        <button class="material-design-hamburger__icon"> <span class="material-design-hamburger__layer"></span> </button>
+    </section>
+    <!-- Hamburger Menu Icon Ends -->
+    <!-- Upper Right Menu, - New Menu -->
+    <div class="menu cssMenu" id="menu"></div>
+
+    <!-- Upper Right Menu, Three Dots Icon - New Menu - end -->
+    <div class="wallet cssWallet scriptAction">
+        <div class="testIndicator cssTestIndicator"> Develop </div>
+        <div id="overlay"></div>
+        <div class="nonScrollSize cssNonScrollSize">
+            <!--Tablet Left Side Begins -->
+            <div class="landscapeLeft" id="CryptoControls">
+                <!--
+                The banner at the top with the logo and hamburger menu.
+                We create a fullscreen transparent div so we can detect
+                when the user clicks outside the menu (to dismiss it).
+                -->
+                <div id="JaxxBanner" class="logoBanner cssLogoBanner" style="height: 30px;">
+                    <div  id="JaxxLogo" class="noSelect imageLogoBannerSVG cssImageLogoBannerSVG" ethereumSecretSelector="true" specialAction="jaxxClearAppDataIfAuthenticated"> </div>
+                    <div id='scrollHeaderContainer' class="scrollHeaderContainer cssScrollHeaderContainer">
+                        <a class="scriptAction leftArrow buttons prev cssLeftArrow" href='#' specialAction="slideBannerLeft"> <img src="images/arrowLeft.png" alt="" height="10" width="10" style="padding-top:5px;"> </a>
+                        <div class="cssCoinBannerWrapper viewport">
+                            <ul id="CarouselList" class="coinBannerContainer cssCoinBannerContainer overview">
+                            </ul>
+                        </div>
+                        <a class="scriptAction buttons next rightArrow cssRightArrow" href='#' specialAction="slideBannerRight"> <img src="images/arrowRight.png" alt="" height="10" width="10" style="padding-top:5px;"> </a>
+                    </div>
+                </div>
+                <div class="wrapTableCurrencySelectionMenu cssWrapTableCurrencySelectionMenu cssList">
+                    <table class="cssTableFiatCurrencySelectionMenu" cellspacing="0" cellpadding="0">
+                        <tbody class="fiatCurrencySelectionMenu cssList cssFiatCurrencySelectionMenu">
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Upper Right Menu, Three Dots Icon - New Menu -->
+                <div class="mainMenuCloser cssMainMenuCloser scriptAction" specialAction="toggleMainMenu"></div>
+                <!-- A suspend overlay for reducing API calls to manage data issues -->
+                <!-- Upper Right Menu, Three Dots Icon -->
+                <!-- Send/Receive tabs -->
+                <div class="tabs">
+                    <div class="clearfix"></div>
+                    <div id="ReceiveTabBtn"  class="tabReceive tab receive cssTab wow animated slideInLeft" data-wow-duration="0.5s" toggleTab="receive">
+                        <div class="tabBox">
+                            <div id="receiveTabImage" class="icon imageArrowDown">
+                                <img src="images/ui_elements/arrow.svg" class="verticalCentreReceive">
+                            </div>
+                            <span class="desktopTabTitle" id="receiveTabLabel">RECEIVE</span>
+                        </div>
+                    </div>
+                    <div id="SendTabBtn" class="tabSend tab send cssTab wow animated slideInRight" data-wow-duration="0.5s" toggleTab="send">
+                        <div class="tabBox">
+                            <div id="sendTabImage" class="icon imageArrowUp cssImageArrowUp">
+                                <img src="images/ui_elements/arrow.svg" class="verticalCentreSend">
+                            </div>
+                            <span class="desktopTabTitle" id="sendTabLabel">SEND</span>
+                        </div>
+                    </div>
+                    <!-- Scan / Middle Camera Button -->
+                    <div class="cameraTab scriptAction cssCameraTab wow animated fadeIn" data-wow-duration="0.5s" specialAction="scan">
+                        <div class="cssCameraTab1"></div>
+                        <div class="cssCameraTab2">
+                            <div class="imageCameraSmall"></div>
+                        </div>
+                    </div>
+                    <!-- Shapeshift Button -->
+                    <div id="ShapeSiftFoxBtn" class="shapeshiftTab middleTab cssShapeshiftTab wow animated fadeIn shapeShiftDesktopTab" data-wow-duration="0.5s">
+                        <div class="tabBox">
+                            <div id="exchangeTabImage" class="icon imageArrowExchange">
+                                <img src="images/ui_elements/double-arrow.svg" class="verticalCentreExchange">
+                            </div>
+                            <span class="desktopTabTitle" id="exchangeTabLabel">EXCHANGE</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="banners cssBanners"></div>
+                <!-- Tab Contents. We use the same amount for each and slide-up/slide-down the relevant parts as needed. -->
+                <div id="SendTransactionView" class="tabContent cssTabContent">
+                </div>
+                <!-- "My Address" box at the top of the wallet -->
+                <div id="AddressView" class="mainAddressBox cssAddressBox wow animated zoomIn" data-wow-duration="0.5s">
+                    <div id="CoinDisplayName" class="populateAddressType noSelect cssIntro ">Your Current Bitcoin Address:
+                    </div>
+                    <div class="addressPlace cssAddressPlace">
+                        <div id="AddressView-address"
+                             class="populateAddress cssAddress cssSelectable cssPopulateAddress"></div>
+                        <div id="CopyToClipboardBtn" class="populateAddressCopy imageCopy
+                        cssImageCopy cssNoSelect
+                         cssCopyToClipboard" copy="address"></div>
+                    </div>
+                    <div class="copied cssCopied wow animated" data-wow-duration="0.5s">Copied to Clipboard</div>
+                </div>
+                <!-- Balance Main View -->
+                <div class="balanceBoxSeperator cssSeparator wow animated fadeIn" data-wow-duration="0.5s"></div>
+                <!-- Balance box containing the balance and QR Code -->
+                <div id="BalanceView" class="cssBalanceBox">
+                    <div class="scriptAction cssDismissCurrencySelectionMenu" hide=".wrapTableCurrencySelectionMenu"
+                         effect="fade" specialAction="toggleQuickFiatCurrencySelector"></div>
+                    <div class="clearfix"></div>
+                    <!-- Tablet Balance Centering Div A-->
+                    <div class="landscapeBalanceCenteringA cssLandscapeBalanceCenteringA">
+                        <div id="RefreshContainer" class="cssRefreshContainer wow animated fadeIn">
+                            <div id="balance_gif">
+                                <div class="refreshLoading cssStartHidden" style="min-height: 26px;"><img
+                                        src="./images/refreshing-bal.gif"/>
+                                </div>
+                            </div>
+                            <div id="InitializingLoading" class="initializingLoading cssStartHidden " style="min-height: 26px;">
+                                <img src="./images/initializing-Wallet.gif"/>
+                            </div>
+                            <div class="errorLoadingTransactions cssStartHidden" style="min-height: 26px;">Error Loading
+                                Transactions
+                            </div>
+                            <div class="errorLoadingBalances cssStartHidden" style="min-height: 26px;">Error Loading
+                                Balances
+                            </div>
+                            <div id="refresh-loading"
+                                 class="scriptAction refresh cssRefresh imageRefresh cssNoSelect wow animated fadeIn"
+                                 specialAction="refresh" data-wow-duration="0.5s">
+
+                            </div>
+                        </div>
+                        <div class="mainBalanceBox cssBalance wow animated fadeInLeft" data-wow-duration="0.7s">
+                            <!-- Tablet Balance Centering Div B-->
+                            <div class="landscapeBalanceCenteringB">
+                                <div id="BalanceCoinUnit" class="populateBalanceCoinUnit cssBitcoinIntro">BTC</div>
+                                <div class="populateBalanceCoinAmount cssBitcoinAmount cssSelectable">
+                                    <div id="wholePortion" class="wholePortion cssWholePortion">
+                                        <div id="wholePortionValue" class="displayValue cssDisplayValue">-</div>
+                                    </div>
+                                    <div class="decimalPoint cssDecimalPoint">
+                                        <div id="decimapPoint" class="displayValue cssDisplayValue">.</div>
+                                    </div>
+                                    <div class="decimalPortion cssDecimalPortion">
+                                        <div id="decimalPortionValue" class="displayValue cssDisplayValue">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Remove this class  for Tablet-->
+                            <div class="amountNull" style="min-height: 23px"></div>
+                            <div id="WalletFiatBalance" class="portraitCurrency cssCurrencyFloat scriptAction">
+                                <div id="WalletFiatAmount" class="populateBalanceFiat cssFiatAmount cssNoSelect scriptAction">--.--</div>
+                                <div id="FiatSelector"></div>
+                            </div>
+                        </div>
+                        <div id="QRContainer" class="slideInRight wow animated">
+                            <div class="portraitQRCode cssPortraitQRCode">
+                                <div class="qrCode cssQRCode wow animated" data-wow-duration="0.7s">
+                                    <img class="populateQRCode"/></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--Tablet QR Separator-->
+                <div class="landscapeQRSeperator animated wow fadeIn" data-wow-duration="0.5s"></div>
+                <!--Tablet QR Code-->
+                <div id="landscapeQRCode" class="landscapeQRCode cssCenter cssTabletQR">
+                    <div class="qrCode cssQRCode wow animated zoomIn" data-wow-duration="0.7s">
+                        <img id="QRCodeSmall" class="populateQRCode"/></div>
+                    <div class="clearfix"></div>
+                    <!--Tablet QR Code Ends-->
+                </div>
+                <!--Tablet Left Side Ends-->
+            </div>
+            <!--Tablet Right Side Begins-->
+            <!-- Transactions History Start-->
+<style>
+    #TransactionsView #History-counter{
+        position:relative;
+        width: 40px;
+        height: 0;
+        margin: auto;
+        font-size: 100px;
+        top:100px;
+        opacity: 0.5;
+    }
+</style>
+            <div id="TransactionsView" class="landscapeRight animated wow" data-wow-duration="0.5s">
+                        <!-- Transactions History Ends-->
+            </div>
+        </div>
+        <!-- Ether and BTC Washout Image -->
+        <div id="SpinnerContainer">
+            <div id="SpinnerContent" class="coin-spinner wow animated spinning">
+            </div>
+        </div>
+    </div>
+    <div class="notificationOverlay cssStartHidden">
+        <div class="cssNotificationFooter notificationFooter carouselFooter cssOrangeBackgroundColor cssStartHidden">
+            <!-- cssStartHidden -->
+            <div class="carousel cssCarousel">
+                <!-- add data-flickity if you want to carouselize this in html -->
+                <div class="carousel-cell">
+                    <div class="cssLightbulbTips">
+                        <div class="title cssJaxxTips"> TIPS &amp; TRIXX: </div>
+                        <div class="description cssJaxxTipsDescriptionLeft"> Want some handy Jaxx tips? Here's a few to get you on your way to optimizing your Jaxx experience! </div>
+                        <div class="cssFooterImages"> <img class="cssLightbulb" src="images/Lightbulb.png"> <img class="cssWand" src="images/Wand.png"> </div>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="cssShapeshiftTips">
+                        <div class="title cssJaxxTips"> CRYPTO-EXCHANGE ONBOARD </div>
+                        <div class="description cssJaxxTipsDescriptionLeft"> Jaxx is your crypto-exchange! Thanks to our ShapeShift integration, you can effortlessly convert one token to another. </div>
+                        <div class="cssFooterImages"> <img class="cssFooterImage" src="images/Fox.png"> </div>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="cssBackupTips">
+                        <div class="title cssJaxxTips"> SIMPLE BACKUP &amp; RESTORE </div>
+                        <div class="description cssJaxxTipsDescriptionLeft"> Did you know one 12-word Backup Phrase secures all your Jaxx digital assets including all the ones we'll add in the future? </div>
+                        <div class="cssFooterImages"> <img class="cssFooterImage" src="images/Wallet.png"> </div>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="cssSecurityPinTips">
+                        <div class="title cssJaxxTips"> ADD A SECURITY PIN </div>
+                        <div class="description cssJaxxTipsDescriptionLeft"> Add a 4-digit PIN for extra security when sending transactions, displaying your Backup Phrase and Private Keys </div>
+                        <div class="cssFooterImages"> <img class="cssCode" src="images/code2.png"> </div>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="cssAssetTips">
+                        <div class="title cssJaxxTips"> CUSTOMIZE YOUR INTERFACE </div>
+                        <div class="description cssJaxxTipsDescriptionLeft"> Jaxx lets you choose and sort your favorite assets and currencies to display on your main interface. </div>
+                        <div class="cssFooterImages"> <img class="cssFooterImage" src="images/Gear.png"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssBtnIntroLeft"></div>
+                <div class="scriptAction cssBtnIntroCenter skip" specialAction="jaxx_ui.hideNotificationFooter"><span class="cssTextFeedback">SKIP</span></div>
+                <div class="scriptAction cssBtnIntroRight okGotIt" specialAction="jaxx_ui.hideNotificationFooter"><span class="cssTextFeedback">OK I GOT IT</span></div>
+                <div class="scriptAction cssBtnIntroRight"></div>
+            </div>
+        </div>
+    </div>
+    <div id="SendTransactionConfirmationView" class="notificationOverlay modal-bottom hideNotificationFooter">
+    </div>
+    <div id="ShapeShiftConfirmationOld" class="notificationOverlay modal-bottom hideNotificationFooter">
+    </div>
+    <div id="ClaimBCHConfirmation" class="notificationOverlay modal-bottom hideNotificationFooter">
+    </div>
+    <div id="shapeshiftNotAvailable" class="notificationOverlay modal-bottom hideNotificationFooter">
+    </div>
+    <div class="flashBannerNotificationFooter cssFlashBannerNotificationFooter">
+        <!-- flash banners will appear here when Navigation.flashBanner is called -->
+    </div>
+    <div class="modal loading cssModal">
+        <div class="cssLoading">
+            <div class="cssItem cssCenter">
+                <div class="scriptAction cssHeader">Loading Interface...</div>
+                <!--Testing Loading Spinner-->
+                <div class="load">
+                    <div class="cube"></div>
+                </div>
+            </div>
+            <div class="scriptAction cssFooter">Hang tight!
+                <br />
+                <br /> This is a very intensive process
+                <br /> and may take some time...</div>
+        </div>
+    </div>
+    <div class="applicationStart cssApplicationStart">
+        <div class="applicationStartImage cssApplicationStartImage"></div>
+    </div>
+    <div class="modal creatingWallet cssModal">
+        <div class="cssLoading">
+            <div class="cssItem cssCenter">
+                <div class="scriptAction cssHeader">Creating Your Interface</div>
+                <div class="load">
+                    <div class="cube"></div>
+                </div>
+            </div>
+            <div class="scriptAction cssFooter">Hang tight!
+                <br />
+                <br /> This is a very intensive process
+                <br /> and may take some time...</div>
+        </div>
+    </div>
+    <!-- This modal is not used right now -->
+    <div class="modal profile cssModal cssProfile">
+        <div class="cssContent">
+            <div class="cssItem cssCenter">
+                <div class="scriptAction cssHeader">theDaoRefundConfirmButton </div>
+            </div>
+            <h1>Upload Profile Photo</h1>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true"> <span class="cssTextFeedback">From Gallery</span> </div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true"> <span class="cssTextFeedback">From Camera</span> </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Reset Jaxx Cache Warning -->
+    <div class="modal resetJaxxCache cssModal cssScanPrivate">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader">Warning
+                    <!--                        <div class="cssClose cssNoSelect">x</div>--></div>
+            </div>
+            <h1> Reset Jaxx Cache </h1>
+            <p>
+                This will re-load your current Backup Phrase and recompile your balances and transaction histories.
+                You will not lose any funds, but it will reset your wallet preferences (with the exception of your Security PIN).
+                <br/>
+                In addition, all the addresses in your address book will be permanently delete.
+            </p>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true"> <span class="cssTextFeedback">Cancel</span> </div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true" specialAction="resetCache"> <span class="cssTextFeedback">Reset Cache</span> </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Clear All Data -->
+    <div class="modal cssModal clearAllData cssScanPrivate">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader">Warning
+                    <!--                        <div class="cssClose cssNoSelect">x</div>--></div>
+            </div>
+            <h1> Clear All Data </h1>
+            <p> Are you sure you want to clear all application data? This will clear all of your application data including any references to your funds on the blockchain. Be very very careful when using this feature and ensure your Backup Phrase is written down somewhere. </p>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true">Cancel</div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true" specialAction="clearAllData">Clear Data</div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Firefox Warning -->
+    <div class="modal firefoxWarningPopupFirstFrame cssModal cssScanPrivate">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">Warning
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <p>If Firefox crashes or incurs a Force Quit before you secure your Backup Phrase, your wallet will be lost. To protect against this, please do the following before adding funds to your wallet:
+                <br>
+                <br> 1. Open the Menu on the upper right hand corner.
+                <br> 2. Go to Tools > Display Backup Phrase.
+                <br> 3. Write down your Backup Phrase.
+                <br> 4. Close and re-open Firefox.</p>
+        </div>
+    </div>
+    <!-- Modal For Ethereum Test Failed -->
+    <div class="modal ethereumTestFailed cssModal cssScanPrivate">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">Android Platform/Ethereum Library Error
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <p>Unfortunately, the Ethereum Wallet is not working on your Android device model. You can still use the Ethereum Wallet on all other versions of Jaxx (iOS mobile/tablet, Chrome/Firefox browser extension, PC/Mac/Linux desktops).
+                <br>
+                <br> To help us fix this issue, please use the send button below, which will automatically set up an email to us containing the device specs we need. Here's what the trace looks like:
+                <br>
+                <br> <span class="ethereumTestFailedUserString">User String</span>
+                <div class="cssSeparator"></div>
+                <div class="button cssButtons cssNoSelect">
+                    <div class="ethereumTestFailedConfirmButton button enabled cssButton cssEnabled">Send</div>
+                </div>
+        </div>
+    </div>
+    <!-- Modal For Mining Fees Popup-->
+    <div class="modal miningFeesModal ethereumLegacySweepModal cssModal cssScanPrivate cssEthereumLegacySweepModal pageSetBitcoinMiningFee">
+        <div class="cssContent cssEthereumLegacySweepModalContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">Mining Fee
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <div class="cssItem cssModalBody">
+              <!-- TEMPLATE MINING SETTINGS FEE FROM BTC MINING FEES -->
+              <div class="miningOptionBody cssMiningOptionBody">
+                  <div class="customMiningFeeSelectionOption settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight cssStartHidden" specialAction="jaxx_controller.clickMiningOption">
+                      <!-- Add code to enable special action -->
+                      <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                          <input type="radio" class="scriptAction" id="customMiningFeeMainMenu" name="miningFeeMainMenuButton" value="customMiningFeeMainMenu">
+                          <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                          <div class="optionTrigger cssOptionTrigger">
+                              <div class="optionHeading cssOptionHeading">
+                                  <label>CUSTOM</label>
+                              </div>
+                          </div>
+                          <div class="bitcoinBox cssBitcoinBox"></div>
+                          <input class="enterCustomMiningFee cssEnterCustomMiningFee" type="text" name="fname">
+                          <div class="check"></div>
+                      </div>
+                      <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                          <div class="toggler cssToggler">
+                              <p class="cssIntroScreenHeading">Check this box for the custom option.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="fastMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOptionPopup">
+                      <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                          <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                          <div class="optionTrigger cssOptionTrigger">
+                              <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                                  <input type="radio" class="scriptAction" id="fastMiningFeeMainMenu" view="popup" name="miningFeePopupButton" value="fastMiningFeeMainMenu">
+                                  <label>FAST (Pricey Fees)</label>
+                                  <div class="check"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                          <div class="toggler cssToggler">
+                              <p class="cssIntroScreenHeading introScreenHeading">We recommend choosing this option for transactions that you wish to confirm most likely in the next block.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="averageMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOptionPopup">
+                      <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                          <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                          <div class="optionTrigger cssOptionTrigger">
+                              <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                                  <input type="radio" class="scriptAction" id="averageMiningFeeMainMenu" name="miningFeePopupButton" value="averageMiningFeeMainMenu">
+                                  <label>AVERAGE (Normal Fees)</label>
+                                  <div class="check"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                          <div class="toggler cssToggler">
+                              <p class="cssIntroScreenHeading introScreenHeading">We expect transactions to confirm in approximately 3 blocks; however, it may take longer depending on the level of congestion on the blockchain network.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="slowMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOptionPopup">
+                      <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                          <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                          <div class="optionTrigger cssOptionTrigger">
+                              <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                                  <input type="radio" class="scriptAction" id="slowMiningFeeMainMenu" name="miningFeePopupButton" value="slowMiningFeeMainMenu" specialaction="jaxx_controller.clickMiningOptionPopup">
+                                  <label>SLOW (Cheap Fees)</label>
+                                  <div class="check"></div>
+                                  <div class="mining-fee-info">We do not recommend to choose Slow mining fee.</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                          <div class="toggler cssToggler">
+                              <p class="cssIntroScreenHeading introScreenHeading">A smaller mining fee will apply. We do not recommend this option as it may take days to receive a confirmation.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction button enabled cssBtnIntroCenter" closeModal="true" specialAction="walletSendReceive"><span class="cssTextFeedback">Continue</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Ethereum Test Failed -->
+    <div class="modal ethereumLegacySweepModal cssModal cssScanPrivate cssEthereumLegacySweepModal">
+        <div class="cssContent cssEthereumLegacySweepModalContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">Ethereum HD Upgrade
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <div class="cssItem cssModalBody">
+                <ul>
+                    <li>
+                        <p>Your Jaxx Ethereum wallet has been upgraded to use an HD address.</p>
+                    </li>
+                    <li>
+                        <p>Jaxx has detected an ether balance in your previous wallet: <span class="ethereumLegacySweepEtherAmount cssETHLegacyTX">0.123 ETH</span></p>
+                    </li>
+                    <li>
+                        <p>Jaxx can automatically transfer your funds to the new HD address. For more on HD wallets, see our Help section.</p>
+                    </li>
+                    <li>
+                        <p>The total transaction cost for this transfer will be: <span class="ethereumLegacySweepTXCost cssETHLegacyTX">0.0105 ETH</span></p>
+                    </li>
+                    <li>
+                        <p>Your static keypair will remain visible in Tools > Display Private Keys</p>
+                     </li>
+                </ul>
+            </div>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="ethereumLegacySweepConfirmButton button enabled cssBtnIntroCenter" closeModal="true" specialAction="cancelImportPrivateKey"><span class="cssTextFeedback">Transfer</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Scan Private Key From Camera -->
+    <div class="modal scanPrivate cssModal cssScanPrivate">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true"> Backup Phrase Detected
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <p>You have scanned a Pairing Code. Your existing wallet will be replaced with the wallet you have scanned.</p>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true" specialAction="cancelImportPrivateKey"><span class="cssTextFeedback">Cancel</span></div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true" specialAction="confirmImportPrivateKey"><span class="cssTextFeedback">Transfer</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal For Scan Website From Camera -->
+    <div class="modal scanWeb cssModal cssScanWeb">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">Website Detected
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <p>You have scanned a BitID QR Code. The following will lorem ipsum sont dolor sit amet.</p>
+            <div class="cssCenter cssItem">
+                <div class="scriptAction cssBlueButton cssEnabled" pushSettings="#">Cancel</div>
+                <div class="scriptAction cssBlueButton cssEnabled" pushSettings="#">Allow</div>
+            </div>
+        </div>
+    </div>
+    <!--Modal for QR Code a Password-->
+    <div class="modal withPass cssModal cssScanWeb cssWithPass">
+        <div class="cssContent">
+            <div class="cssItem">
+                <div class="scriptAction cssHeader" closeModal="true">WithPass Test Detected
+                    <div class="cssClose cssNoSelect">x</div>
+                </div>
+            </div>
+            <p>You have scanned a QR Code which requires a password to continue. The following will lorem ipsum sont dolor sit amet.</p>
+            <div class="cssItem cssCenter cssInput">
+                <input type="text" placeholder="Enter Password" autocorrect="off" autocapitalize="none" autocomplete="off" type="text" /> </div>
+            <br>
+            <div class="cssCenter cssItem cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true">Cancel</div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true">Next</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal enterPin cssModal cssSend cssPinPadModal">
+        <div class="cssContent">
+            <div class="scriptAction cssHeader" closeModal="true">Send Confirmation
+                <div class="cssClose">x</div>
+            </div>
+            <div class="modalSendEnterPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText modalSendEnterPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal send cssModal cssSend cssMainSendModal">
+        <div class="cssContent">
+            <div class="cssInternalElements">
+                <div class="scriptAction cssHeader" closeModal="true">Send Confirmation
+                    <div class="cssClose">x</div>
+                </div>
+                <div class="cssItem cssSendPrice cssCenter"> Send: <span class="cssAmount"><span class="amount"></span> <span class="amountAbbreviatedName cssUnit">BTC</span></span>
+                </div>
+                <div class="cssSeparator"></div>
+                <div class="cssItem">
+                    <div class="cssHeaderForAddress cssCenter">
+                        <p>Receiving address:</p> <span class="address cssCodeAddress"></span> </div>
+                    <div class="cssSeparator"></div>
+                    <div class="cssMiningFeeConfirmationModal">
+                        <div class="miningFeeSelector cssButtonGroup">
+                            <h2>Mining Fee:</h2>
+                            <table class="cssTableMiningFee">
+                                <tr class="cssMiningTitles">
+                                    <td class="cssCustomLabelMiningFee">
+                                        <label>Slow</label>
+                                    </td>
+                                    <td class="cssCustomLabelMiningFee">
+                                        <label>Average</label>
+                                    </td>
+                                    <td class="cssCustomLabelMiningFee">
+                                        <label>Fast</label>
+                                    </td>
+                                </tr>
+                                <tr class="cssMiningCheckBoxes">
+                                    <td>
+                                        <label for="slowMiningFeeGeneric"></label>
+                                        <input type="radio" id="slowMiningFeeGeneric" name="miningFeeGenericButton" value="slowMiningFeeGeneric">
+                                        <div class="check">
+                                            <div class="inside"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <label for="averageMiningFeeGeneric"></label>
+                                        <input type="radio" id="averageMiningFeeGeneric" name="miningFeeGenericButton" value="averageMiningFeeGeneric">
+                                        <div class="check">
+                                            <div class="inside"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <label for="fastMiningFeeGeneric"></label>
+                                        <input type="radio" id="fastMiningFeeGeneric" name="miningFeeGenericButton" value="fastMiningFeeGeneric">
+                                        <div class="check">
+                                            <div class="inside"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="cssMiningFeeExtraText">
+                                    <td>
+                                        <p>Cheap</p>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <p> Pricey </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="cssNotice"> This transaction will include a mining fee of
+                            <div class=cssMiningFeeText> ~ <span class='computedFeeText'>0.0001</span> <span class='miningFeeAbbreviatedName'>BTC</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssCenter cssBackContinue">
+                <div class="scriptAction cssEnabled cssBtnIntroLeft" closeModal="true">Cancel</div>
+                <div class="scriptAction cssEnabled cssBtnIntroRight" closeModal="true" specialAction="sendConfirm"><span class="cssTextFeedback">Confirm</span></div>
+            </div>
+        </div>
+    </div>
+    <!--    Modal for ShapeShift conformation    -->
+    <div id="ShapeShiftConfirmationNew" class="modal shift cssModal cssShift">
+    </div>
+    <div class="modal full cssModal cssFull">
+        <div class="cssContent">
+            <div class="cssQRClose cssNoSelect">x</div>
+            <div class="populateAddressType scriptAction cssHeader" closeModal="true">Your Current <span id="modal-wallet-name"></span> Address: </div>
+            <div class="cssItem cssCenter">
+                <div class="cssPopCenter cssAligCenter"> <span class="populateAddress cssAddress cssCopyLargeTextShrink"></span>
+                    <div class="scriptAction populateAddressCopyLarge imageCopy cssImageCopy cssNoSelect"></div>
+                </div>
+                <div class="qrCode cssQRCode"><img class="populateQRCode" /></div>
+                <div class="copiedLarge cssCopiedLarge">Address copied to Clipboard</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal jaxxNews cssModal cssJaxxNews">
+        <div class="cssContent">
+            <div class="scriptAction cssHeader" closeModal="true">Jaxx Bulletin
+                <div class="cssClose cssNoSelect">x </div>
+            </div>
+            <div class="cssItem">
+                <h2 class="coinBulletinTitle cssCoinBulletinTitle">Title</h2>
+                    <p class="coinBulletinDescription cssCoinBulletinDescription"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, deleniti, ab. Assumenda ipsam eius aliquam, consectetur est aspernatur. Quae commodi doloremque perspiciatis at repudiandae magni placeat, minus necessitatibus repellendus voluptatem.</p>
+                <div class="coinBulletinCheckmark cssCoinBulletinCheckmark scriptAction" specialAction="jaxx_controller.clickCoinBulletinCheckmark">
+                    <div class="cssCircleUnchecked"></div>
+                    <label>Don't Show This Bulletin Again</label>
+                </div>
+                <div class="cssCenter cssItem cssBackContinue">
+                    <div id="bulletinCloseButton" class="scriptAction cssEnabled cssBtnIntroRight" specialAction="jaxx_controller.clickCoinBulletinCloseButton">
+                        <span class="scriptAction cssTextFeedback">Close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- INITIAL TERMS OF SERVICE PAGES BEGIN -->
+    <div class="settings pageReleaseNotesBulletin cssSettingsBackup cssExportPrivateKeys cssSB2">
+        <div class="scriptAction cssHeader cssCenter titleForJaxxReleaseBulletin"> Jaxx Release Notes Version 1.2.0.
+            <!-- Export Bitcoin private keys -->
+        </div>
+        <div class="cssTitleForJaxxReleaseBulletin headingForJaxxReleaseBulletin"> We're proud to present our newest version 1.2.0! Below is a list of new features, changes and bug fixes.</div>
+        <div class="cssItem cssBackup cssbackupTab2">
+            <div class="cssDescriptionForJaxxReleaseBulletinWrapper descriptionForJaxxReleaseBulletinWrapper">
+                <div class="cssDescriptionForJaxxReleaseBulletin cssBackupPrivateKeyList">
+                     <!--New features section -->
+                    <div class="releaseNotesSection cssReleaseNotesSection">
+                        <div class="cssHeader">
+                            <div class="imgWrapper cssImgWrapper">
+                                <div class="imgNewFeatures cssImgNewFeatures"> </div>
+                            </div>
+                            <div class="cssTitle dataFromServer inputNewFeatures title">aaaaa</div>
+                        </div>
+                        <div class="dataFromServerinputNewFeatures details dataFromServer inputNewFeatures">
+                            <ul>
+                                <li>Please wait as we fetch this data from the server. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Changes Section -->
+                    <div class="releaseNotesSection cssReleaseNotesSection">
+                        <div class="cssHeader">
+                            <div class="imgWrapper cssImgWrapper">
+                                <div class="imgBugFixes cssImgBugFixes"> </div>
+                            </div>
+                            <div class="cssTitle dataFromServer inputBugFixes title">bbbb</div>
+                        </div>
+                        <div class="dataFromServer inputBugFixes details">
+                            <ul>
+                                <li>Please wait as we fetch this data from the server. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Bug Fixes Section -->
+                    <div class="releaseNotesSection cssReleaseNotesSection">
+                        <div class="cssHeader">
+                            <div class="imgWrapper cssImgWrapper">
+                                <div class="imgImprovements cssImgImprovements"> </div>
+                            </div>
+                            <div class="cssTitle dataFromServer inputChanges title">cccc</div>
+                        </div>
+                        <div class="dataFromServer inputChanges details">
+                            <ul>
+                                <li>Please wait as we fetch this data from the server. </li>
+                            </ul>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssCenter cssBtnExport cssBackContinue">
+            <div class="scriptAction backupPrivateKeyListcopy cssEnabled cssBtnIntroRight" specialAction="jaxx_controller.clickReleaseNotesContinueButton"> <span class="cssTextFeedback">CONTINUE</span> </div>
+        </div>
+    </div>
+    <!-- Terms of Service page Begins -->
+    <div class="settings pageTermsOfService cssSettings cssTermsOfService">
+        <div class="scriptAction cssHeader cssCenter">JAXX end user License Agreement</div>
+        <div class="cssItem cssTSInfo">
+            <p class='scriptAction'> By clicking accept, you confirm that you have read and agreed to our privacy policy and terms of service. </p>
+        </div>
+        <div class='scriptAction expandableTermsOfService cssExpandableTermsOfService' specialAction='showTermsOfService'>
+            <label class='scriptAction stopPropagation' specialAction='showTermsOfService'> View Terms of Service </label>
+            <div class='scriptAction sideArrow cssSideArrow stopPropagation' specialAction='showTermsOfService'> </div>
+        </div>
+        <div class='scriptAction expandableTermsOfService cssExpandableTermsOfService' specialAction='jaxx_ui_intro.showPrivacyPolicy'>
+          <label class='stopPropagation'> View Privacy Policy </label>
+          <div class='sideArrow cssSideArrow stopPropagation'> </div>
+        </div>
+        <div  class="cssCenter cssBackContinue">
+            <div class="cssInnerBoxCallToAction">
+                <div class="scriptAction cssBtnCancel btnCancel" specialAction='clickCancelTermsOfService'>DECLINE</div>
+                <div class="scriptAction cssBtnIntroRight btnContinue" specialAction='btnContinueTermsOfService'> <span class="cssTextFeedback">ACCEPT</span> </div>
+            </div>
+        </div>
+    </div>
+    <!-- Terms of Service pages Ends -->
+    <!-- Modal for Terms of Service Page -->
+    <div class="termsOfServiceModal cssTermsOfServiceModal">
+        <div class="cssContent">
+            <h1 class='title cssTitle'> Terms of Service </h1>
+            <div class='termsOfServiceVerbatim cssTermsOfServiceVerbatim'>
+                1. Parties<p>This agreement is between you ("You" or "Your" in this agreement) and 8821542 Canada Limited o/a Decentral ("Software Developer").</p>2. Service Offered <p>Software Developer has created a means for users to access, and transfer ownership of, virtual currency tokens (such as bitcoins) under the name "Jaxx" ("Jaxx Software"). By entering into this agreement You will receive a license to use the Jaxx Software. <br><br>You should only use the Jaxx Software if you are familiar with virtual currencies.Software Developer highly recommends learning the basics of the specific virtual currency that you plan on using with the Jaxx Software before running the Jaxx Software. <br><br>The Jaxx Software is licensed to you without charge. </p>3. You Own Your Private Keys<p>Software Developer does not store users' private keys, backup phrases or passwords ("Private Information"). It is very important that You backup Private Information. If You lose Your Private Information then it will not be possible for Software Developer to recover it for You and You may lose access to Your virtual currency tokens.<br><br>If You do not understand the above paragraph then Software Developer recommends that You learn more about virtual currencies before using the Jaxx Software. </p>4. User Obligations<br> <p>You shall: <br> a)&nbsp;be of age of majority in Your local jurisdiction; and,<br> b) be responsible for Your own virtual currency tokens; and,<br> c) backup/write down Your "backup phrase" and keep it private; and,<br> d) carefully guard Your private keys; and,<br> e) carefully review the list of supported virtual currency tokens before engaging in any transactions; and,<br> f) ensure that Your device(s) are fully updated and do not contain viruses, malware or otherwise malicious software.<br><br>You shall not:<br>a)&nbsp;deposit virtual currency tokens into addresses for tokens that are not supported by the Jaxx Software; or,<br>b)&nbsp;use the Jaxx Software in a manner likely to infer with other Jaxx Software users or virtual currency nodes (e.g. excessive API calls or network spam); or,<br>c) use the Jaxx Software in a manner contrary to Your local laws.</p>5. No Control Over Blockchains<p>Software Developer is not the creator of, and does not have any control over, any of the virtual currencies that the Jaxx Software allows You to use. </p>6. Third Party Integrations<p>The Jaxx Software integrates with third party services. Although the Jaxx Software makes it easy to engage with the integrated third parties, Software Developer shall not be responsible for any consequences stemming from Your use of third party integrated services. If You require assistance with a third party integration then You should contact the third party. </p>7. Transactions<p>The only authentic record of virtual currency transactions is the applicable virtual currency blockchain.<br><br>The Jaxx Software provides functionality that allows You to send virtual currency transfer instructions. Software Developer does not guarantee that transactions You perform using the Jaxx Software shall be stored in any virtual currency blockchain. You must ensure that Your transactions conform to the applicable rules of the virtual currency software. <br><br>There may be transaction fees (e.g. mining fees) associated with Your virtual currency transactions that are required by the virtual currency system You engage with. Software Developer shall not be responsible for any losses You incur due to transaction fees or losses that occur due to incorrectly set transaction fees (i.e. too low or high). <br><br>Software Developer does not have access to Your transactions (or anyone else's). </p>8. Limited Intellectual Property License<p>This agreement licenses the Jaxx Software to You on a personal, non-exclusive, royalty-free, non-transferable, worldwide-basis, for the purpose of holding and transferring virtual currencies. You are not permitted to re-distribute the Jaxx Software, modify any code or use any Jaxx Software content, including images and text, as part of any other software or project of any kind. For partnership inquiries please contact Software Developer through www.Jaxx.io. </p>9. Third Party Libraries<p>The Jaxx Software contains libraries developed by third parties. Software Developer may provide third party libraries to You as part of the Jaxx Software solution but shall not be considered to be the owner or licensor of the third party libraries. Please refer to and respect the relevant third party library licenses. </p>10. Submitted Feedback &amp; Ideas<p>If You choose to provide feedback on the features or functions of the Jaxx Software ("Submitted Feedback") then You shall be deemed to have given permission to Software Developer to incorporate Your Submitted Feedback into the Jaxx Software. Software Developer shall be free to make use of Your Submitted Feedback without royalty or obligation of any kind. </p>11. Specifically Disclaimed Risks<p>Using virtual currency software necessarily entails many risks. Software Developer specifically disclaims and shall have no liability to You for the following risks:<br>a)&nbsp;operating system failures (mobile or desktop); and,<br>b)&nbsp;interactions between Your hardware, software and the Jaxx Software; and,<br>c)&nbsp;cloud backup software (e.g. certain Android distributions) may upload your private information to third party services; and,<br>d)&nbsp;malware, viruses or other malicious software on Your device that is able to take control of or interfere with the Jaxx Software; and,<br>e)&nbsp;communication delays between Your Jaxx Software and a node or relay service for a virtual currency (and vice versa); and,<br>f)&nbsp;failure to achieve a certain market value/price for a virtual currency token, whether through a third-party service or any other kind of transaction; and,<br>theft of virtual currency tokens.</p>12. No Warranty<p>The Jaxx Software is provided to You at no cost, "as-is" and without any warranty whatsoever, to the maximum extent permissible by law. Without limiting the generality of the foregoing, Software Developer does not warrant that the Jaxx Software is fit for Your purpose, even if You have previously provided notice of Your intended purpose, and does not warrant that the Jaxx Software will operate in a bug-free manner.</p>13. Limitation of Liability<p>Software Developer's liability to You shall not, under any circumstances, exceed the greater of: <br>a) the Canadian dollar value of 0.1 bitcoins; or, <br>b) $50 CAD. </p>14. Indemnity<p>You agree to indemnify Software Developer against any claims, damages, losses or legal fees incurred due to Your use (or misuse) of the Jaxx Software. </p>15. Non-Waiver<p>No action or inaction on the part of Software Developer shall be considered a waiver of any right or obligation by Software Developer.  </p>16. Amendment<p>This agreement may be amended by Software Developer by providing You with 30 days notice of any proposed change. If You do not agree to the amended terms then Your sole remedy shall be to cease using the Jaxx Software.</p>17. Assignment<p>You may not assign this agreement. Software Developer may assign this agreement upon 15 days notice.</p>18. Governing Law and Choice of Forum<p>This agreement shall be governed by the laws of Ontario, Canada. Any disputes related to this agreement or the Jaxx Software shall be heard in the courts of Toronto, Ontario, Canada. </p>19. Entire Agreement<p>This is the entire agreement between the parties and supersedes any other agreement, representations (or misrepresentations), or understanding, however communicated.</p>
+            </div>
+            <div class="scriptAction cssBtnHideTermsOfService" specialAction='hideTermsOfService'>CLOSE</div>
+        </div>
+    </div>
+    <!-- End of modal for Terms of Service Page -->
+    <!-- Modal for Terms of Service Page -->
+    <div class="privacyPolicyModal cssTermsOfServiceModal">
+        <div class="cssContent">
+            <h1 class='title cssTitle'> Privacy Policy </h1>
+            <div class='privacyPolicyVerbatim cssTermsOfServiceVerbatim'> 1.Principles:<p>a)&nbsp;Privacy is a human right and software should help protect your rights.<br>b)&nbsp;We don’t require you to register or log in.<br>c)&nbsp;We don’t have access to your funds (private keys).<br>d)&nbsp;We don’t require your name or email address.</p>2.Registration/Login Not Required<p>Jaxx does not require you to register or log in.</p>3.Private Keys Stay on Device<p>Your private keys will stay on your device.</p>4.Camera Data Stays on Device<br><p>Your camera will only be used for reading QR codes.Camera images will never leave your device.</p> 5.Physical Location<p>Your physical location will never be communicated to us, unless you provide prior specific consent.</p>6.Blockchain Transactions<br><p>Your blockchain transactions may be relayed through servers (“nodes”) and will be publicly visible due to the public nature of distributed ledger systems.</p>7.Secure Communication with Our Servers<p>All of our servers support HTTPS.</p>8.Communication with Third-Party Servers<br><p>Exchange rates, balances, transactions and other blockchain information may be read from, or relayed to, third-party servers. We cannot guarantee the privacy of your Internet connection.</p>9.Third-Party Services<br><p>Jaxx has software integrations with third-party services that you may choose to use, for example, Shapeshift. If you do use third-party services through Jaxx then they will be clearly marked and there may be other terms or privacy policies that apply.</p>10.Aggregate Usage Statistics<br><p>We may collect Jaxx usage information in order to improve function or UI, but will only use this information in an aggregated, anonymized fashion, and never in association with your name, email, or other personally identifying information(Personally Identifying Information).</p>11.Optional Extra PII<br><p>You may choose to provide us with personally identifying information in order to participate in certain programs, activate features, or obtain other benefits but you will always be able to use the basic features of Jaxx without providing personally identifying information. If you provide us with personally identifying information then, notwithstanding any part of this policy, we may use that information in order to provide you with services or to improve the functioning or UI of Jaxx.</p> 12.All User Information is Confidential<br><p>Your personally identifying information will be kept strictly confidential and never provided to third parties (other than in an aggregated, anonymized report such as number of users per month).</p><p>All Jaxx staff are bound by confidentiality agreements.</p> 13.Support Requests<br><p>If you contact support then as part of the support request we may incidentally collect your personally identifying information but we will endeavor to keep that information secure and confidential. Support information may be managed using a third-party service and further terms of that service may apply to your support request.</p>14.Privacy Questions<br><p>Questions should be directed to: info@jaxx.io</p><p>Jaxx reserves the right to change or amend any part of its Privacy Policy at any time without prior notice</p></div>
+            <div class="scriptAction cssBtnHideTermsOfService" specialAction='jaxx_ui_intro.hidePrivacyPolicy'>CLOSE</div>
+        </div>
+    </div>
+    <!-- End of modal for Terms of Service Page -->
+    <!-- Attention page Begins -->
+    <div class="settings pageAttentionMessage cssSettings cssAttentionPage">
+        <div class="scriptAction cssHeader cssCenter" popSettings="true">Attention
+            <!-- <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div> --></div>
+        <div class="cssItem cssVerifyStyle">
+            <p class="hideForExistingUsers">You have declined to agree to the Jaxx End User agreement. Please choose to review the Jaxx End User License Agreement again, or exit the application.</p>
+        </div>
+        <div class="scriptAction expandableTermsOfService cssExpandableTermsOfService" popSettings="true">
+            <label> Jaxx End User License Agreement </label>
+            <div class="scriptAction sideArrow cssSideArrow" specialAction="showTermsOfService"> </div>
+        </div>
+    </div>
+    <!-- Attention Page Ends -->
+    <!-- BEGIN: Warning page before viewing keys -->
+    <div class="settings pageWarningBeforeViewKeys cssPageWarningBeforeViewKeys cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">View Backup Phrase</div>
+        <div class="cssbackupTab2 cssSB2">
+            <section class="wow-animated-flash">
+                <div class="cssCenter">
+                    <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </div>
+            </section>
+            <p>Your 12-word Backup Phrase will be displayed on the following page as a string of random words. </p>
+            <p>Make sure you view your Backup Phrase in private. Anyone with the following Backup Phrase can gain full access to your funds so DO NOT store them publicly or share with anyone. </p>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cancelButton cssBtnIntroLeft" popsettings="true"> <span class="cssTextFeedback">Cancel</span> </div>
+            <div class="pairDeviceShowMnemonicCount cssTimerCountDown">TIMER</div>
+            <div class="scriptAction pairDeviceShowMnemonicButton cssBtnIntroRight" specialaction="clickViewKeysButton"> <span class="cssTextFeedback">I UNDERSTAND</span> </div>
+        </div>
+    </div>
+    <!-- END: Warning page before viewing keys -->
+    <!-- PIN code confirmation page for View Keys -->
+    <div class="settings viewMnemonicConfirmPinViewKeys cssSettingsMnemonic cssBackgroundBottom">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Display Backup Phrase
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssSettingsPinPad">
+            <div class="settingsViewMnemonicViewKeysConfirmPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+            <br> </div>
+    </div>
+    <!-- PIN code confirmation page for View Keys Page -->
+    <!-- View Keys Page -->
+    <div class="settings pageViewKeysTermsOfService cssSettingsMnemonic cssDarkBg">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true"> BACKUP PHRASE  </div>
+        <div class="cssItem mnemonic cssMnemonicPop">
+            <br/>
+            <div class="description cssDescription cssWideMargins">
+                <h2>Below is the Backup Phrase to your existing wallet. Since you have not agreed to the Jaxx End User License Agreement, we cannot allow you to proceed. You have the option now to return to the Jaxx End User License Agreement or exit the application.
+                    </h2> </div>
+            <br>
+            <div class="heading cssHeading"> YOUR BACKUP PHRASE </div>
+            <div class="cssPopulateColor"><span class="populateMnemonic cssPopulateMnemonic"></span></div>
+            <br> </div>
+    </div>
+    <!-- @note: apparently these need to be logically ordered in this html file as well to have them function properly -->
+    <div class="settings splash cssSettings cssSplash imageBackgroundTile">
+        <div class="cssContent">
+            <div class="cssItem cssCenter">
+                <div class="cssLogo imageLogoSplash wow animated bounceInDown"></div>
+            </div>
+            <div class="optionBox cssOptionBox">
+                <div class="optionCreateNewWallet scriptAction cssItem cssCenter cssFloatingBox cssCreateNewWalletOption" specialAction="selectSplashSetupOption">
+                    <div class="optionTrigger cssOptionTrigger ">
+                        <div class="optionHeading cssOptionHeading cssIntroRadioBtn">
+                            <input type="radio" name='createWalletOption' value='CreateNewWallet' class="radioBtnSplashOption cssRadioBtnSplashOption cssRadioBtnInput scriptAction" specialAction="splashOptionClicked" />
+                            <label>CREATE NEW WALLET</label>
+                            <div class="check"></div>
+                        </div>
+                    </div>
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value="CreateNewWallet" specialAction="toggleExpandSplashOption" style="z-index: 1000;"></div>
+                    <div class="toggler">
+                        <div class="ui-widget-content ui-corner-all">
+                            <p> Welcome, new Jaxx user! When you create a wallet, you'll be presented with two paths: Express or Custom wallet setup. </p></div>
+                    </div>
+                </div>
+                <div class="optionPairFromDeviceStart scriptAction cssItem cssCenter cssFloatingBox" specialAction="selectSplashSetupOption">
+                    <div class="optionTrigger cssOptionTrigger">
+                        <div class="optionHeading cssOptionHeading cssIntroRadioBtn">
+                            <input type="radio" name="createWalletOption" value="PairFromDeviceStart" class="radioBtnSplashOption cssRadioBtnSplashOption cssRadioBtnInput scriptAction" specialAction="splashOptionClicked" />
+                            <label>PAIR / RESTORE WALLET</label>
+                            <div class="check"></div>
+                        </div>
+                    </div>
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value="PairFromDeviceStart" specialAction="toggleExpandSplashOption" style="z-index: 1000;"></div>
+                    <div class="toggler">
+                        <div class="ui-widget-content ui-corner-all">
+                            <p> Welcome back, Jaxx user! Pair or restore your existing wallet by inputting your 12-word Backup Phrase or scanning your Pairing Code.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight btnContinue" specialAction="pressContinueSplashOption"> <span class="cssTextFeedback">CONTINUE</span> </div>
+        </div>
+    </div>
+    <!-- Tools Menu -->
+    <div class="settings toolsPage cssToolsPage cssMenuPage cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Tools
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssScrollableMenuListWrapper">
+            <div class="cssItem cssScrollableMenuList">
+
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" pushSettings="backupWallet">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Backup Wallet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[355, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">This is where you can find your wallet's unique 12-word Backup Phrase and Pairing Code and have the option to backup your wallet by verifying your Backup Phrase. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" pushSettings="displayPrivateKeysWarning">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Display Private Keys</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[355, "140px"], [500, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading introScreenHeading">View and/or export private keys and public addresses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" pushSettings="pairDevice">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Pair Devices</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[500, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Pair your wallet to or from another device with your Backup Phrase &nbsp;/&nbsp; Pairing Code.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div id="btnTemporaryAddressBook" class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Temporary Address Book</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[500, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading"> Keep you addresses in JAXX memory</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" pushSettings="pageDisplayPaperWalletOptions">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Transfer Paper Wallet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[400, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Send the funds from a paper wallet or private key into your current wallet in Jaxx. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="settingsResetCache etcEthMenuOption expandableText cssExpandableText scriptAction cssOpacity cssStartHidden expandableDetailsAncestor cssInitialHeight" specialaction="checkForEtcEthSplit">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>ETH / ETC Split</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[500, "100px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Check if your Ethereum needs to be split.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of paper wallets page -->
+    <div id="paperWalletList" class="settings pageDisplayPaperWalletOptions cssPageDisplayPaperWalletOptions cssMenuPage cssSettingsBackup">
+
+    </div>
+    <div class="settings backupRestore cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Back Up
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem"> </div>
+    </div>
+    <!-- New Backup Menu -->
+    <div class="settings backupWallet cssMenuPage cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Backup Wallet
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssScrollableMenuListWrapper">
+            <div class="cssItem cssScrollableMenuList">
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" pushSettings="backupMnemonic">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Backup Wallet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[355, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">You can backup your wallet by verifying your 12-word Backup Phrase. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandableText cssExpandableText scriptAction expandableDetailsAncestor cssInitialHeight" pushSettings="viewBackupPhrase" clearValue=".settings.importMnemonic textarea">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>View Backup Phrase</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedHeight='[[413, "140px"], [763, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">View your 12-word Backup Phrase / Pairing Code without backing up your wallet. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New Backup Menu ends -->
+    <div class="settings pairDevice cssMenuPage cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Pair Devices
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssScrollableMenuListWrapper">
+            <div class="cssItem cssScrollableMenuList">
+                <div class="expandableText cssExpandableText scriptAction expandableDetailsAncestor cssInitialHeight" pushSettings="pairFromDevice">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Pair / Restore Wallet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[450, "140px"], [820, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Delete and replace your current wallet by scanning an existing wallet's Pairing Code or entering its Backup Phrase.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="expandableText cssExpandableText scriptAction expandableDetailsAncestor cssInitialHeight" pushSettings="pairToDevice" clearValue=".settings.importMnemonic textarea">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Display Pairing Code</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedHeight='[[413, "140px"], [763, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Display this wallet's Pairing Code / Backup Phrase to access your current wallet on another device. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW SETTINGS MENU -->
+    <div class="settings settingsPage cssSettingsPage cssMenuPage cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Settings
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssScrollableMenuListWrapper">
+            <div class="cssItem cssScrollableMenuList">
+                <div class="scriptAction expandableText cssExpandableText expandableDetailsAncestor cssInitialHeight" pushSettings="setupPINCode" clearValue=".settings.importMnemonic textarea">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Setup Security PIN</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[355, "140px"], [500, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Set a PIN for added security when sending funds and accessing pairing or backup tools.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction expandableDetailsAncestor cssInitialHeight" clearSettings="true" openModal="resetJaxxCache" specialaction="toggleMainMenu">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>Reset Jaxx Cache</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[500, "140px"], [830, "120px"], [2000, "100px"]]'>
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">Reinitialize your wallet by clearing cached data and wallet preferences. This will not affect your Backup Phrase, private keys or your PIN.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scriptAction expandableText cssExpandableText expandableDetailsAncestor cssInitialHeight" pushSettings="pageSetBitcoinMiningFee" clearValue=".settings.importMnemonic textarea">
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label>BTC Mining Fee</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="200px">
+                        <div class="toggler cssToggler">
+                            <p class="cssIntroScreenHeading">The Bitcoin network requires a fee to be paid for each transaction. The fee rewards the miner that includes it in a block. You have the option to select / alter the mining fee. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW SETTINGS MENU ENDS -->
+    <!-- Set Bitcoin Mining Fee -->
+    <div id="BitCoinMiningFee" class="settings cssSettings pageSetBitcoinMiningFee"></div>
+    <!--Backup Mnemonic Section-->
+    <div class="settings backupMnemonic cssToolsBackupPhrase cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">BACKUP Wallet
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem cssBackup cssbackupTab2">
+            <div class="cssItem cssBackup cssExpandableText cssInitialHeight expandableDetailsAncestor">
+                <div class="expandableDetailsHeader">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialaction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="optionTrigger cssOptionTrigger">
+                        <div class="optionHeading cssOptionHeading">
+                            <label>Would you like to backup your wallet now?</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="noScroll" class="expandableDetailsElement cssExpandableDetailsElement" expandedHeight="160px">
+                    <div class="cssDescription toggler cssToggler">
+                        <div class="cssInvisibleParagraphs">
+                            <p class="cssInvisibleParagraph"> On the following screen, you will see a set of 12 random words. This is your wallet's Backup Phrase. You can use this to restore your wallet or pair your wallet in any version of Jaxx. </p>
+                            <p class="cssInvisibleParagraph"> Write down the exact Backup Phrase and keep it in a secure location. Do not share your Backup Phrase with anyone, unless you would like them to have access to your funds. </p>
+                            <p class="cssInvisibleParagraph"> If you do not write down this phrase and lose access to Jaxx, you will permanently lose access to your funds. </p>
+                            <p class="cssInvisibleParagraph"> Please note that for your security, your Backup Phrase is never sent to any servers and only exists on your device. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssLastBackUpDate">
+                <label></label>
+            </div>
+            <div class="cssBackUpNote"></div>
+        </div>
+        <div class="checkboxSettingsBackupMnemonicPage cssCenter cssCheckboxContainer cssOpacity scriptAction" specialAction="clickCheckboxSettingsBackupMnemonicPage">
+            <!-- Borrowed from cssUnitAndCurrency -->
+            <div class="cssCenteredChild">
+                <div class="cssCheckbox">
+                    <div class="cssCircleUnchecked"></div>
+                </div>
+                <div class="cssCheckboxText">Yes, I understand how Jaxx backup works</div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight proceedToBackupMnemonicButton btnContinue cssStartHidden" pushSettings="viewMnemonic"><span class="cssTextFeedback">CONTINUE</span></div>
+        </div>
+    </div>
+    <!--Backup Private Keys Section-->
+    <div class="settings backupPrivateKeysConfirmPin cssSettingsMnemonic cssDarkBg">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Display Private Keys
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="settingsBackupPrivateKeysConfirmPinPad cssPinPad">
+            <div class="cssPinContainer">
+                <div class="cssInputPIN cssCenter">
+                    <p class="settingsEnterPinPadText settingsBackupPrivateKeysConfirmPinPadText">Confirm PIN</p>
+                    <input class="pinEntry0 cssPinEntry" type="password" />
+                    <input class="pinEntry1 cssPinEntry" type="password" />
+                    <input class="pinEntry2 cssPinEntry" type="password" />
+                    <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                <ul class="cssNumPad">
+                    <li class="numPadButton1" rel="1"><span>1</span></li>
+                    <li class="numPadButton2" rel="2"><span>2</span></li>
+                    <li class="numPadButton3" rel="3"><span>3</span></li>
+                    <li class="numPadButton4" rel="4"><span>4</span></li>
+                    <li class="numPadButton5" rel="5"><span>5</span></li>
+                    <li class="numPadButton6" rel="6"><span>6</span></li>
+                    <li class="numPadButton7" rel="7"><span>7</span></li>
+                    <li class="numPadButton8" rel="8"><span>8</span></li>
+                    <li class="numPadButton9" rel="9"><span>9</span></li>
+                    <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                    <li class="numPadButton0" rel="0"><span>0</span></li>
+                    <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                </ul>
+            </div>
+        </div>
+        <br> </div>
+    <div class="settings displayPrivateKeysWarning cssDisplayPrivateKeysWarning cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">View Private Keys
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssbackupTab2 cssSB2">
+            <section class="wow-animated-flash">
+                <div class="cssCenter">
+                    <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </div>
+            </section>
+            <p>On the following screen, you'll see a list of your public addresses and private keys generated by your wallet. Your public addresses will be shown on top of your private keys. </p>
+            <p>Your private keys are the keys to your funds so DO NOT SHARE them with anyone unless you'd like them to have access to your funds. </p>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cancelButton cssBtnIntroLeft" popsettings="true"> <span class="cssTextFeedback">Cancel</span> </div>
+            <div class="pairDeviceShowMnemonicCount cssTimerCountDown">TIMER</div>
+            <div class="scriptAction pairDeviceShowMnemonicButton cssBtnIntroRight" pushSettings="backupPrivateKeys" specialAction="jaxx_controller.generatePrivateKeysBasedOnCheckedCoinsInMenu"> <span class="cssTextFeedback">I UNDERSTAND</span> </div>
+        </div>
+    </div>
+    <!--View Private Keys-->
+    <div id="ViewPrivateKeys" class="settings backupPrivateKeys"></div>
+    <!-- Display Private Keys Dynamically -->
+    <div id="DisplayPrivateKeysDynamically" class="settings cssSettingsBackup cssSB2 cssPrivateKeysDisplay dynamicPrivateKeyDisplay"></div>
+    <!--Export Private Keys Dynamically -->
+    <div id="ExportPrivateKeysDynamically" class="settings cssExportPrivateKeys cssSettingsBackup exportPrivateKeysDynamically"></div>
+    <!--Change Default Wallet-->
+    <div class="settings setDefaultWallet cssSetDefaultWallet cssSettings cssBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Change Default Wallet
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem cssBackup cssChangeDefWalletBg">
+            <div class="cssCenter cssSB2">
+                <p>Choose your default wallet below.</p>
+            </div>
+        </div>
+        <div class="setDefaultWalletList cssSetDefaultWalletList">
+            <div class="scriptAction defaultWalletItem cssDefaultWalletItem" changedefaultcointype="0">Bitcoin Wallet</div>
+        </div>
+    </div>
+    <!--Change Default Wallet Ends-->
+    <!-- PIN Setup Information Screen -->
+    <div class="settings setupPINCode cssSetDefaultWallet cssSettingsBackup cssMenuPage cssBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Setup Security PIN
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem">
+            <div class="scriptAction expandableText cssExpandableText" pushSettings="changePinCode" clearValue=".settings.importMnemonic textarea" expandedheight="130px">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="toggleClosestAncestorExpandableText"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Change PIN</label>
+                    </div>
+                </div>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Change your Security PIN.</p>
+                </div>
+            </div>
+            <div class="scriptAction expandableText cssExpandableText" pushSettings="removePinCode" clearValue=".settings.importMnemonic textarea" expandedheight="130px">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="toggleClosestAncestorExpandableText"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Remove PIN</label>
+                    </div>
+                </div>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Remove your Security PIN.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PIN Setup Information Screen Ends -->
+    <!-- Setup Your PIN Screen -->
+    <div class="settings changePinCode removePinCode cssSetDefaultWallet cssSettings cssBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Setup Security PIN
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssSettingsPinPad">
+            <div class="settingsEnterPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="cssItem cssCenter">
+                <div class="button cssButtons cssNoSelect">
+                    <div class="settingsEnterNewPinConfirmButton button enabled cssBlueButton cssEnabled">Confirm</div>
+                </div>
+            </div>
+            <br> </div>
+    </div>
+    <!-- Setup Your PIN Screen Ends -->
+    <!--Restore Mnemonic Section-->
+    <div class="settings restoreMnemonic cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Load New Wallet</div>
+        <div class="cssItem cssBackup cssbackupTab2">
+            <section class="wow-animated-flash">
+                <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </section>
+            <p>Loading a new wallet will replace the current wallet. You will lose access to its associated funds!</p>
+            <p>If you haven't done so already, write down your current wallet's Backup Phrase before pairing from the new wallet.</p>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction cssBlueButtonWide" pushSettings="verifyMnemonic">I Understand</div>
+        </div>
+    </div>
+    <div class="settings importMnemonic cssStartScreenBackupP cssSettings">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Import Backup Phrase</div>
+        <div class="cssItem"> Type in your Backup Phrase in
+            <a href="#popup2">
+                <div class="imageInfo cssImageInfo"></div>
+            </a>
+            <br>the correct sequence below.
+            <br>
+            <br>
+            <br>
+            <textarea class="validateMnemonic" targetButton=".settings.importMnemonic .button" placeholder="Enter Backup Phrase" autocorrect="off" autocapitalize="none" autocomplete="off" type="text"></textarea>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight button btnContinue" specialAction="importMnemonic.import" targetInput=".settings.importMnemonic textarea">Restore Wallet</div>
+        </div>
+    </div>
+    <!--Info Tab for Import Mnemonic-->
+    <div id="popup2" class="popOverlay">
+        <div class="popup">
+            <div class="popupTitle">
+                <p>Display Backup Phrase</p> <a class="close" href="#">x</a> </div>
+            <div class="content">
+                <p>Your wallet's Backup Phrase is a specific set of 12 random words that can be used to restore all wallet funds, transactions, and keypairs.</p>
+            </div>
+        </div>
+    </div>
+    <div class="settings viewMnemonicConfirmPin cssSettingsMnemonic cssBackgroundBottom">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Display Backup Phrase
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssSettingsPinPad">
+            <div class="settingsViewMnemonicConfirmPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText settingsViewMnemonicConfirmPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+            <br> </div>
+    </div>
+    <!--Warning Screens Ends-->
+
+    <!--Paper Wallet Panels-->
+    <div id="transferWalletWarning" class="settings paperWarning cssPaperWarning cssSettingsMnemonic cssDarkBg">
+
+    </div>
+    <!--  Type in private key (or scan)  -->
+    <div id="transferPaperWallet" class="settings sweepPrivateKey cssSweepPrivateKey cssSettingsMnemonic cssDarkBg">
+
+    </div>
+    <!--  Private key Pasword input field  -->
+    <div class="settings sweepPrivateKeyPasswordEntry cssSettingsMnemonic">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Transfer Paper Wallet &nbsp;/ &nbsp;Private Key
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssbackupTab2 cssOpacity">
+            <p>Jaxx detected an encrypted private key. Please enter password to decrypt the wallet.</p>
+            <div class="cssSweepEntryInput cssCameraInput cssInput cssGapSmall">
+                <input type="password" name="password" id="passwordSweep" placeholder="Enter Password" autocorrect="off" autocapitalize="none" autocomplete="off" /> </div>
+            <br> </div>
+        <div class="cssCenter">
+            <div class="nextSweepPass scriptAction cssBlueButton" specialAction="sweepPrivateKey.tryToDecrypt">Decrypt</div>
+            <br>
+            <br> </div>
+        <div class="cssbackupTab2 cssOpacity cssItem cssCenter" id="bip38ProgressDiv" style="display: none;"> <pre>Decrypting key, please wait ...</pre>
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!--  Sweep private key  -->
+    <div id="sweepPrivateKey" class="settings confirmSweepPrivateKey cssSettingsMnemonic">
+
+    </div>
+    <!--Paper Wallet Panels End-->
+    <div class="settings viewMnemonic cssSettingsMnemonic cssShowMnemonic cssDarkBg">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Backup Wallet
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssPlainText"> Please write down your Backup Phrase in the exact sequence below. On the next screen you will be asked to re-enter it in order to ensure accuracy. </div>
+        <div class="cssItem mnemonic cssMnemonicPop">
+            <div class="cssMnemonicDisplay cssOpacity"><span class="populateMnemonic"></span></div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight" pushSettings="verifyMnemonic" specialAction="hideVerifyMnemonicButton"><span class="cssTextFeedback">CONTINUE</span></div>
+        </div>
+    </div>
+    <!--View Mnemonic Ends-->
+    <div class="settings quickVerifyMnemonic cssSettings">
+        <div class="scriptAction cssHeader" popSettings="true"> Verify Backup Phrase</div>
+        <div class="cssItem cssCenter">
+            <div>Please verify your Backup Phrase.</div>
+        </div>
+        <div class="cssShowButton cssItem">
+            <div class="input cssInput">
+                <input type="text" placeholderFormat="The %s word" placeholder="" autocorrect="off" autocapitalize="none" autocomplete="off" /> </div>
+        </div>
+        <div class="cssItem">
+            <div class="cssItem cssCenter">
+                <div class="scriptAction button cssButton">Next</div>
+            </div>
+        </div>
+    </div>
+    <div class="settings verifyMnemonic cssSettingsMnemonic cssShowMnemonic cssDarkBg">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Backup Phrase
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem mnemonic cssMnemonicPop">
+            <div class="expandableText cssExpandableText" expandedheight='[[340, "140px"], [515, "120px"], [2000, "100px"]]'>
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="toggleClosestAncestorExpandableText"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label> Confirm Your 12-word Backup Phrase </label>
+                    </div>
+                </div>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Please enter your 12-word Backup Phrase to ensure you have an exact copy. </p>
+                </div>
+            </div>
+        </div>
+        <div class="cssItem cssVerifyStyle">
+            <textarea id="backupTextBox" class="validateMnemonic" targetButton=".settings.verifyMnemonic .btnNext" placeholder="Enter Backup Phrase" autocorrect="off" autocapitalize="none" autocomplete="off" type="text"></textarea>
+        </div>
+        <div class="cssItem cssPlainText backupPhraseConfirmText cssStartHidden">
+            <bold> Success! </bold>
+            <br />
+            <br /> Keep your written copy private in a secure and safe location. This is a key, should you ever need to restore your wallet. </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnNext cssBtnNext cssBtnIntroRight" specialAction="confirmBackup" timeout="5" clearSettings="true">FINISH</div>
+        </div>
+    </div>
+    <!--Pair with/from Device-->
+    <div id="ViewBackupPhrase" class="settings pairFromDevice cssToolsPairDeviceWarning cssSettingsBackup cssSB2"></div>
+    <div id="PairRestoreWallet" class="settings pairFromDevice cssToolsPairDeviceWarning cssSettingsBackup cssSB2"></div>
+    <div class="settings viewBackupPhrase cssToolsDisplayPairingCodeWarning cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">View Backup Phrase
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssbackupTab2 cssSB2">
+            <section class="wow-animated-flash">
+                <div class="cssCenter">
+                    <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </div>
+            </section>
+            <p>Your 12-word Backup Phrase will be displayed as both a QR code and a string of random words. </p>
+            <p>Make sure you view your Backup Phrase in private. Anyone with the following QR code and Backup Phrase can gain full access to your funds so DO NOT store them publicly or share with anyone. </p>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cancelButton cssBtnIntroLeft" popsettings="true"> <span class="cssTextFeedback">Cancel</span> </div>
+            <div class="pairDeviceShowMnemonicCount cssTimerCountDown">TIMER</div>
+            <div class="scriptAction pairDeviceShowMnemonicButton cssBtnIntroRight" pushSettings="viewJaxxBackupPhrase" show=".settings.viewJaxxBackupPhrase .cssShowButton" specialAction="viewJaxxBackupPhrase.prepare"> <span class="cssTextFeedback">I UNDERSTAND</span> </div>
+        </div>
+    </div>
+    <div class="settings pairToDevice cssToolsDisplayPairingCodeWarning cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Display Pairing Code
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssbackupTab2 cssSB2">
+            <section class="wow-animated-flash">
+                <div class="cssCenter">
+                    <h2><div class="imageWarning cssImageWarning"></div>Warning</h2> </div>
+            </section>
+            <p>Your private key will be displayed as both a QR code and a Backup Phrase. </p>
+            <p>Make sure you view the QR code and Backup Phrase in private. Anyone with this QR code or Backup Phrase can gain full access to your funds, so please do not store them publicly. </p>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cancelButton cssBtnIntroLeft" popsettings="true"> <span class="cssTextFeedback">Cancel</span> </div>
+            <div class="pairDeviceShowMnemonicCount cssTimerCountDown">TIMER</div>
+            <div class="scriptAction pairDeviceShowMnemonicButton cssBtnIntroRight" pushSettings="viewJaxxToken" show=".settings.viewJaxxToken .cssShowButton" specialAction="viewJaxxToken.prepare"> <span class="cssTextFeedback">I UNDERSTAND</span> </div>
+        </div>
+    </div>
+    <div class="settings pairToDeviceConfirmPin cssPairToDeviceConfirmPin cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Display Pairing Code
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="settingsPairToDeviceConfirmPinPad cssPinPad">
+            <div class="cssPinContainer">
+                <div class="cssInputPIN cssCenter">
+                    <p class="settingsEnterPinPadText settingsPairToDeviceConfirmPinPadText">Confirm PIN</p>
+                    <input class="pinEntry0 cssPinEntry" type="password" />
+                    <input class="pinEntry1 cssPinEntry" type="password" />
+                    <input class="pinEntry2 cssPinEntry" type="password" />
+                    <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                <ul class="cssNumPad">
+                    <li class="numPadButton1" rel="1"><span>1</span></li>
+                    <li class="numPadButton2" rel="2"><span>2</span></li>
+                    <li class="numPadButton3" rel="3"><span>3</span></li>
+                    <li class="numPadButton4" rel="4"><span>4</span></li>
+                    <li class="numPadButton5" rel="5"><span>5</span></li>
+                    <li class="numPadButton6" rel="6"><span>6</span></li>
+                    <li class="numPadButton7" rel="7"><span>7</span></li>
+                    <li class="numPadButton8" rel="8"><span>8</span></li>
+                    <li class="numPadButton9" rel="9"><span>9</span></li>
+                    <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                    <li class="numPadButton0" rel="0"><span>0</span></li>
+                    <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="settings pairFromDeviceStart cssPairFromDeviceStart cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Pair From Another Device </div>
+        <div class="expandableText cssExpandableText cssThreeLinesOfText expandableDetailsAncestor cssInitialHeight">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialaction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Pairing from another wallet will allow you to access one Jaxx across multiple devices.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[355, "140px"], [500, "120px"], [2000, "100px"]]'>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading mvn">To pair, scan the QR code of the other wallet, or input its Backup Phrase.</p>
+                </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight" pushSettings="introLoadJaxxToken">Continue</div>
+        </div>
+    </div>
+    <!--Pair with/from Device Ends-->
+    <!-- Pair Device Screen where you enter your mnemonic -->
+    <div class="settings introLoadJaxxToken cssIntroConfirmBackup cssSettings">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">PAIR / RESTORE WALLET </div>
+        <div class="cssItem cssVerifyStyle cssExpandableText expandableText cssTextDisplayBox expandableDetailsAncestor cssInitialHeight">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Enter Your Backup Phrase</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[390, "140px"], [715, "120px"], [2000, "100px"]]'>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Type in your wallet's Backup Phrase in the correct sequence below to pair.</p>
+                </div>
+            </div>
+        </div>
+        <textarea class="validateMnemonic" targetButton=".settings.introLoadJaxxToken .button" placeholder="Enter Backup Phrase" autocorrect="off" autocapitalize="none" autocomplete="off" type="text"></textarea>
+        <!--<div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnRespondToMnemonicInput button cssBtnIntroRight cssStartHidden" targetInput=".settings.introLoadJaxxToken textarea" specialAction="jaxx_ui_intro.pressContinuePairDevices">Next</div>
+            <!-- This goes to pushSettings="pressContinuePairDevices" 
+        </div>-->
+        <div class="pairFromDevice">
+            <div class="cssCenter csstitletext">OR BETTER YET</div>
+            <div class="cssItem cssQRCodeScan cssExpandableText expandableText cssTextDisplayBox" expandedheight='[[357, "140px"], [635, "120px"], [2000, "100px"]]'>
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="toggleClosestAncestorExpandableText"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Scan QR Code</label>
+                    </div>
+                </div>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Use the camera to scan the pairing QR code of the other wallet to pair your devices.</p>
+                </div>
+            </div>
+            <div class="scriptAction cssCenter cameraButton" specialAction="jaxx_ui_intro.pairFromDeviceScanQR"> <img class="cssCameraButton" src="images/icon-white-camera.svg" /> </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnRespondToMnemonicInput button cssBtnIntroRight cssStartHidden" targetInput=".settings.introLoadJaxxToken textarea" specialAction="jaxx_ui_intro.pressContinuePairDevices">Next</div>
+            <!-- This goes to pushSettings="pressContinuePairDevices" -->
+        </div>
+    </div>
+    <!-- Pair Device Screen where you enter your mnemonic ENDS -->
+    <!-- Pair Device Screen where you enter your mnemonic -->
+    <div class="settings loadJaxxToken cssIntroConfirmBackup cssSettings">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">PAIR / RESTORE WALLET </div>
+        <div class="cssItem cssVerifyStyle cssExpandableText expandableText cssTextDisplayBox cssInitialHeight expandableDetailsAncestor">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Enter Your Backup Phrase</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[390, "80px"], [715, "60px"], [2000, "40px"]]'>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Type in your wallet's Backup Phrase in the correct sequence below to pair.</p>
+                </div>
+            </div>
+        </div>
+        <textarea class="validateMnemonic" targetButton=".settings.loadJaxxToken .button" placeholder="Enter Backup Phrase" autocorrect="off" autocapitalize="none" autocomplete="off" type="text"></textarea>
+        <!--<div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnRespondToMnemonicInput button cssBtnIntroRight" targetInput=".settings.loadJaxxToken textarea" specialAction="importMnemonic.import">Next</div>
+            <!-- This goes to pushSettings="pressContinuePairDevices"
+        </div>-->
+        <div class="pairFromDevice">
+            <div class="cssCenter csstitletext">OR BETTER YET</div>
+            <div class="cssItem cssQRCodeScan cssExpandableText expandableText cssTextDisplayBox" expandedheight='[[357, "140px"], [635, "120px"], [2000, "100px"]]'>
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="toggleClosestAncestorExpandableText"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Scan QR Code</label>
+                    </div>
+                </div>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Use the camera to scan the pairing QR code of the other wallet to pair your device.</p>
+                </div>
+            </div>
+            <div class="scriptAction cssCenter cameraButton" specialAction="jaxx_ui.pairFromDeviceScanQRToolsMenu"> <img class="cssCameraButton" src="images/icon-white-camera.svg" /> </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnRespondToMnemonicInput button cssBtnIntroRight" targetInput=".settings.loadJaxxToken textarea" specialAction="importMnemonic.import">Next</div>
+            <!-- This goes to pushSettings="pressContinuePairDevices" -->
+        </div>
+    </div>
+    <!-- Pair Device Screen where you enter your mnemonic ENDS -->
+    <!--New Wallet Express/Custom -->
+    <div class="settings createNewWallet cssCreateNewWallet cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Create New Wallet
+            <!--                <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>--></div>
+        <div id="btnOpenCloseExpress" class="ui-state-default ui-corner-all cssBtnOpenCloseExpress btnOpenCloseExpress cssBtnCustomExpress scriptAction" specialAction="selectWalletsSetupOption">
+            <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value='Express' specialAction="toggleExpandSetupOption" style="z-index: 100"></div>
+            <div class="optionTrigger cssOptionTrigger">
+                <div class='optionHeading cssOptionHeading cssIntroRadioBtn'>
+                    <input type='radio' name='setupWalletOption' value='Express' class="cssRadioBtnInput scriptAction radioButtonExpress radioBtnExpressCustom" specialAction="setupWalletOptionClicked" id="f-option-express" />
+                    <label for="f-option-express">EXPRESS</label>
+                    <div class="check"></div>
+                </div>
+                <div class="toggler">
+                    <div class="ui-widget-content ui-corner-all">
+                        <p> Select this option if you'd like to access your new Jaxx wallet quickly. Please note that you'll always be able to customize at a later time. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="btnOpenCloseCustom" class="ui-state-default ui-corner-all cssBtnOpenCloseExpress btnOpenCloseCustom cssBtnCustomExpress scriptAction" specialAction="selectWalletsSetupOption">
+            <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value="Custom" specialAction="toggleExpandSetupOption" style="z-index: 100"></div>
+            <div class="optionTrigger cssOptionTrigger">
+                <div class="optionHeading cssOptionHeading cssIntroRadioBtn">
+                    <input type="radio" name="setupWalletOption" value="Custom" class="cssRadioBtnInput scriptAction radioButtonCustom radioBtnExpressCustom" specialAction="setupWalletOption" id="s-option-custom" />
+                    <label for="s-option-custom">CUSTOM</label>
+                    <div class="check"></div>
+                </div>
+                <div class="toggler">
+                    <div class="ui-widget-content ui-corner-all">
+                        <p> Select this option if you'd like to customize your wallet. You'll be able to select your wallet tokens and currencies, set up a security PIN, and back up your wallet. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight btnContinue cssStartHidden" specialAction="pressContinueSetupOption"> <span class="cssTextFeedback">CONTINUE</span> </div>
+        </div>
+    </div>
+    <!--Pair Devices Express/Custom -->
+    <div class="settings pressContinuePairDevices cssCreateNewWallet cssSettingsBackup cssSB2">
+        <div class="scriptAction cssHeader">Wallet Settings
+            <!--                <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>--></div>
+        <div id="btnOpenClosePDExpress" class="ui-state-default ui-corner-all cssBtnOpenCloseExpress btnOpenClosePDExpress cssBtnCustomExpress scriptAction" specialAction="pairDevicesWalletsSetupOption">
+            <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value='PDExpress' specialAction="toggleExpandPDOption" style="z-index: 100"></div>
+            <div class="optionTrigger cssOptionTrigger">
+                <div class='optionHeading cssOptionHeading cssIntroRadioBtn'>
+                    <input type='radio' name='setupWalletOptionA' value='PDExpress' class="cssRadioBtnInput scriptAction radioButtonPDExpress radioBtnPDExpressCustom" specialAction="setupWalletOptionClicked" id="f-option" />
+                    <label for="f-option">EXPRESS</label>
+                    <div class="check"></div>
+                </div>
+                <div class="toggler">
+                    <div class="ui-widget-content ui-corner-all">
+                        <p> Select this option if you would like to access your new wallet right away. Please note that you can also customize your preferences once your wallet has been created. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="btnOpenClosePDCustom" class="ui-state-default ui-corner-all cssBtnOpenCloseExpress btnOpenClosePDCustom cssBtnCustomExpress scriptAction" specialAction="pairDevicesWalletsSetupOption">
+            <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" value="PDCustom" specialAction="toggleExpandPDOption" style="z-index: 100"></div>
+            <div class="optionTrigger cssOptionTrigger">
+                <div class="optionHeading cssOptionHeading cssIntroRadioBtn">
+                    <input type="radio" name="setupWalletOptionA" value="PDCustom" class="cssRadioBtnInput scriptAction radioButtonPDCustom radioBtnPDExpressCustom" specialAction="setupWalletOption" id="s-option" />
+                    <label for="s-option">CUSTOM</label>
+                    <div class="check"></div>
+                </div>
+                <div class="toggler">
+                    <div class="ui-widget-content ui-corner-all">
+                        <p> Select this option if you would like to customize your wallet. You will be able to select your wallet types, currencies, set up a security PIN, and save your BackUp Phrase. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight btnContinue cssStartHidden" specialAction="jaxx_ui_intro.pressContinueCustomOrExpressPairDevices">CONTINUE</div>
+        </div>
+    </div>
+    <!--New Wallet Express/Custom Ends-->
+    <!--    EXPRESS    -->
+    <div class="settings pageExpressWalletSetup cssExpressSetup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" specialAction="jaxx_controller.clickBackExpressWalletSetup"></div>
+        <div class="scriptAction cssHeader" specialAction="jaxx_controller.clickBackExpressWalletSetup">EXPRESS SETUP</div>
+        <p class="cssIntroScreenHeading">Please select wallets to activate.</p>
+        <div class="cssList cssExpressWalletsCoinListOverlay table">
+            <table class="coinList cssCoinList" cellspacing=0>
+                <tbody>
+                <!-- Elements like the following will be generated programmatically: -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroRight btnContinue takeMeToWallet cssStartHidden" specialAction="TakeMeToMyWallet"> <span class="cssTextFeedback">TAKE ME TO MY WALLET </span> </div>
+        </div>
+    </div>
+    <!--   EXPRESS Ends     -->
+    <!--    CUSTOM    -->
+    <!--    Add Wallets Step    -->
+    <!-- CUSTOM WALLET STUFF -->
+    <div class="settings pageCustomWalletSetup cssCustomSetup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Add Wallets
+            <!--                <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>--></div>
+        <div class="expandableText cssExpandableText cssTwoLinesOfText expandableDetailsAncestor cssInitialHeight">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails,jaxx_ui_intro.setSizeOfScrollableListForCustomCoins"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Please select the wallets you wish to activate.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedHeight='[[500, "172px"], [2000, "129px"]]'>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading ptn">We require you to activate at least one wallet. Please note that additional wallets can be activated at a later time.</p>
+                </div>
+            </div>
+        </div>
+        <div class="cssList cssCustomWalletsCoinListOverlay table">
+            <table class="pageCustomWalletSetup coinList cssCoinList" cellspacing=0>
+                <tbody>
+                <!-- Elements like the following will be generated programmatically: -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnBack"></div>
+            <div class="scriptAction cssBtnIntroRight btnContinue btnCustomCurrencyContinue cssStartHidden" specialAction="pressContinueCustomWallets"> <span class="cssTextFeedback">CONTINUE</span> </div>
+        </div>
+    </div>
+    <!-- Add Wallets Step Ends   -->
+    <!-- Add Currencies Step -->
+    <!-- CUSTOM WALLET STUFF -->
+    <div class="settings pageCustomCurrenciesSetup cssCustomSetupCurrencies cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Add Currencies
+            <!--                <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>--></div>
+        <div class="expandableText cssExpandableText expandableDetailsAncestor cssInitialHeight" expandedHeight="170px">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Please select the currencies you wish to display.</label>
+                    </div>
+                </div>
+            </div>
+            <div class="expandableDetailsElement cssExpandableDetailsElement" expandedheight='[[355, "120px"], [2000, "100px"]]'>
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading ptn">We require you to select at least one currency. Please note that additional currencies can be added at a later time.</p>
+                </div>
+            </div>
+        </div>
+        <div class="sortableList cssSortableList cssList">
+            <table class="exchangeRateList cssExchangeRateList" cellspacing=0>
+                <tbody>
+                    <!-- Elements like the following will be generated programmatically: -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnBack"></div>
+            <div class="scriptAction cssBtnIntroRight btnContinue cssStartHidden" specialAction="pressContinueCustomCurrencies">CONTINUE</div>
+        </div>
+    </div>
+    <!-- Add Currencies Step Ends   -->
+    <!-- Display Backup Phrase Step -->
+    <!-- CUSTOM WALLET STUFF -->
+    <div class="settings backupMnemonicCustomIntroOption cssBackupMnemonicCustomIntroOption cssSettingsBackup cssSB2">
+        <div class="scriptAction cssHeader">BACKUP PHRASE</div>
+        <!--      NEW      -->
+        <div class="cssItem cssBackup expandableText cssExpandableText cssTwoLinesOfText expandableDetailsAncestor cssInitialHeight">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>Would you like to backup your wallet now?</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[500, "350px"], [864, "330px"], [2000, "300px"]]'>
+                <div class="cssDescription toggler cssToggler">
+                    <div class="cssInvisibleParagraphs">
+                        <p class="cssInvisibleParagraph"> On the following screen, you will see a set of 12 random words. This is your wallet's Backup Phrase. You can use this to restore your wallet or pair your wallet in any version of Jaxx. </p>
+                        <p class="cssInvisibleParagraph"> Write down the exact Backup Phrase and keep it in a secure location. Do not share your Backup Phrase with anyone, unless you would like them to have access to your funds. </p>
+                        <p class="cssInvisibleParagraph"> If you do not write down this phrase and lose access to Jaxx, you will permanently lose access to your funds. </p>
+                        <p class="cssInvisibleParagraph"> Please note that for your security, your Backup Phrase is never sent to any servers and only exists on your device. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssCenter cssCheckboxContainer cssOpacity scriptAction" specialAction="clickCheckboxDisplayBackupPhraseInIntro">
+            <!-- Borrowed from cssUnitAndCurrency -->
+            <div class="cssCheckbox">
+                <div class="cssCircleUnchecked"></div>
+            </div>
+            <div class="cssCheckboxText">Yes, I understand how Jaxx backup works</div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnSkip cssBtnIntroLeft" specialAction="jaxx_ui_intro.clickSkipMnemonicPromptPinSetup"><span class="cssTextFeedback">SKIP</span></div>
+            <div class="scriptAction btnContinue cssBtnIntroRight cssStartHidden" specialAction="clickProceedToBackupToShowMnemonic"><span class="cssTextFeedback">CONTINUE</span></div>
+            <!--<div class="scriptAction cssBtnCountdown btnCountdown" ></div>--></div>
+    </div>
+    <!-- Display Backup Phrase Step Ends -->
+    <!-- View Mnemonic Step Begins -->
+    <!-- CUSTOM WALLET STUFF -->
+    <div class="settings viewMnemonicCustomIntroOption cssViewMnemonicCustomIntroOption cssSettingsMnemonic cssShowMnemonic cssDarkBg">
+        <div class="scriptAction cssHeader">BACKUP PHRASE
+            <!--<div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div> --></div>
+        <div class="cssItem mnemonic cssMnemonicPop">
+            <div class="expandableText cssExpandableText expandableDetailsAncestor cssInitialHeight">
+                <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="optionTrigger cssOptionTrigger">
+                        <div class="optionHeading cssOptionHeading">
+                            <label>Your 12-word Backup Phrase</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[365, "140px"], [683, "120px"], [2000, "100px"]]'>
+                    <div class="toggler cssToggler">
+                        <p class="cssIntroScreenHeading">Please write down your Backup Phrase in the correct order and keep it in a secure location. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cssMnemonicDisplay"><span class="populateMnemonic"></span></div>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnIntroLeft btnSkip" specialAction="jaxx_ui_intro.clickSkipOnIntroScreens"><span class="cssTextFeedback">SKIP</span></div>
+            <div class="scriptAction cssBtnIntroRight btnNext" pushSettings="verifyMnemonicCustomIntroOption"><span class="cssTextFeedback">NEXT</span></div>
+        </div>
+    </div>
+    <!-- View Menmonic Step Ends -->
+    <!-- Verify Mnemonic Step Begins -->
+    <!-- CUSTOM WALLET STUFF -->
+    <div class="settings verifyMnemonicCustomIntroOption cssIntroVerifyMnemonicCustomIntroOption cssSettings">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader">BACKUP PHRASE
+            <!--<div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div> --></div>
+        <div class="cssItem">
+            <div class="expandableText cssExpandableText expandableDetailsAncestor cssInitialHeight">
+                <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialAction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="optionTrigger cssOptionTrigger">
+                        <div class="optionHeading cssOptionHeading">
+                            <label>Confirm Your 12-word Backup Phrase</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight='[[325, "140px"], [600, "140px"], [2000, "100px"]]'>
+                    <div class="toggler cssToggler">
+                        <p class="cssIntroScreenHeading">Please enter your 12-word Backup Phrase to ensure that you have a correct copy of it.</p>
+                    </div>
+                </div>
+            </div>
+            <textarea class="validateMnemonic" targetButton=".settings.verifyMnemonicCustomIntroOption .btnNext" placeholder="Enter Backup Phrase" autocorrect="off" autocapitalize="none" autocomplete="off" type="text"></textarea>
+        </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnNext btnNext" pushSettings='pageSetupSecurityPinCode'>NEXT</div>
+        </div>
+    </div>
+    <!-- Verify Mnemonic Step Ends -->
+    <!-- Confirm PIN Step -->
+    <!-- CUSTOM WALLET STUFF -->
+    <!-- Setup Pin Initial Page Begins -->
+    <div class="settings pageSetupSecurityPinCode cssPageSetupSecurityPinCode cssSettings cssOpacity">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">SECURITY PIN </div>
+        <!--      NEW      -->
+        <div class="cssItem">
+            <div class="expandableText cssExpandableText cssTwoLinesOfText expandableDetailsAncestor cssInitialHeight">
+                <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                    <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" specialaction="jaxx_ui.toggleNearbyExpandableDetails"></div>
+                    <div class="optionTrigger cssOptionTrigger">
+                        <div class="optionHeading cssOptionHeading">
+                            <label>Would you like to set up a security PIN?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cssExpandableDetailsElement expandableDetailsElement cssExpanded" expandedheight='[[321, "240px"], [375, "220px"], [1000, "210px"], [2000, "130px"]]'>
+                    <div class="toggler cssToggler">
+                        <p class="cssIntroScreenHeading">Adding a PIN allows you to further secure your wallet. This PIN will be required when you are sending funds, or accessing your pairing / Backup Phrase. Please note that we suggest securing your device using its built-in security features to maximize security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cssCenter cssCheckboxContainer cssCheckboxSecurityPin cssOpacity scriptAction" specialAction="clickCheckboxSecurityPinSetup">
+            <!-- Borrowed from cssUnitAndCurrency -->
+            <div class="cssCenteredChild">
+                <div class="cssCheckbox">
+                    <div class="cssCircleUnchecked"></div>
+                </div>
+                <div class="cssCheckboxText">Yes, I understand how Jaxx security PIN works</div>
+            </div>
+        </div>
+        <!--      NEW      -->
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction btnSkip cssBtnIntroLeft" specialAction="jaxx_ui_intro.skipToCreateWalletWithoutPinCustomSetup"><span class="cssTextFeedback">SKIP</span></div>
+            <div class="scriptAction cssBtnIntroRight cssStartHidden btnContinue" specialAction="enterPinCodeCustomIntroOption"><span class="cssTextFeedback">CONTINUE</span></div>
+        </div>
+    </div>
+    <!-- Setup Pin Initial Page Ends -->
+    <!-- Setup Pin with PIN pad Begins -->
+    <div class="settings cssChangePinCodeCustomIntroOption changePinCodeCustomIntroOption cssSetDefaultWallet cssSettings cssBackup">
+        <!---  removePinCode -->
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader">Setup Security PIN </div>
+        <div class="cssSettingsPinPad">
+            <div class="settingsEnterPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="cssItem cssCenter">
+                <div class="button cssButtons cssNoSelect">
+                    <div class="settingsEnterNewPinConfirmButton button enabled cssBlueButton cssEnabled">Confirm</div>
+                </div>
+            </div>
+            <br> </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnBack" specialAction="jaxx_ui_intro.clickSkipOnIntroScreens">SKIP</div>
+            <div class="scriptAction cssBtnIntroRight btnContinue" specialAction="clickContinueSetupPIN"></div>
+        </div>
+    </div>
+    <!-- Setup Pin with PIN pad ends -->
+    <!-- Confirm Pin with PIN pad Begins -->
+    <div class="settings cssConfirmPinCodeCustomIntroOption confirmPinCodeCustomIntroOption cssSetDefaultWallet cssSettings cssBackup">
+        <!---  removePinCode -->
+        <!-- Back Button for debugging -->
+        <div class="scriptAction imageReturn cssImageReturn" specialAction="clickBackConfirmPinScreen"></div>
+        <!-- /Back button -->
+        <div class="scriptAction cssHeader">Security PIN</div>
+        <div class="cssSettingsPinPad">
+            <div class="settingsEnterPinPad cssPinPad">
+                <div class="cssPinContainer">
+                    <div class="cssInputPIN cssCenter">
+                        <p class="settingsEnterPinPadText">Confirm PIN</p>
+                        <input class="pinEntry0 cssPinEntry" type="password" />
+                        <input class="pinEntry1 cssPinEntry" type="password" />
+                        <input class="pinEntry2 cssPinEntry" type="password" />
+                        <input class="pinEntry3 cssPinEntry" type="password" /> </div>
+                    <ul class="cssNumPad">
+                        <li class="numPadButton1" rel="1"><span>1</span></li>
+                        <li class="numPadButton2" rel="2"><span>2</span></li>
+                        <li class="numPadButton3" rel="3"><span>3</span></li>
+                        <li class="numPadButton4" rel="4"><span>4</span></li>
+                        <li class="numPadButton5" rel="5"><span>5</span></li>
+                        <li class="numPadButton6" rel="6"><span>6</span></li>
+                        <li class="numPadButton7" rel="7"><span>7</span></li>
+                        <li class="numPadButton8" rel="8"><span>8</span></li>
+                        <li class="numPadButton9" rel="9"><span>9</span></li>
+                        <li class="numPadClear cssNumPadFunctionalKey" rel="clear"><span>CLR</span></li>
+                        <li class="numPadButton0" rel="0"><span>0</span></li>
+                        <li class="numPadDelete cssNumPadFunctionalKey" rel="clear"><span>DEL</span></li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="cssItem cssCenter">
+                <div class="button cssButtons cssNoSelect">
+                    <div class="settingsEnterNewPinConfirmButton button enabled cssBlueButton cssEnabled">Confirm</div>
+                </div>
+            </div>
+            <br> </div>
+        <div class="cssItem cssCenter cssBackContinue">
+            <div class="scriptAction cssBtnBack" specialAction="jaxx_ui_intro.clickSkipOnIntroScreens">SKIP</div>
+            <div class="scriptAction cssBtnIntroRight btnContinue" specialAction="clickContinueConfirmPIN"></div>
+        </div>
+    </div>
+    <!-- Confirm PIN with PIN pad Ends-->
+    <!-- PIN stuff ends -->
+    <!--   CUSTOM Ends     -->
+    <!-- This screen is only to view backup phrase and code -->
+    <div class="settings viewJaxxBackupPhrase cssViewJaxxBackupPhrase cssSettings cssShowMnemonic">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">View Backup Phrase
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssItem jaxxToken cssJaxxToken">
+            <div class="qrCode cssQRCode"><img class="populateJaxxToken" /></div>
+        </div>
+        <div class="cssItem mnemonic cssMnemonicPop"> </div>
+        <div class="cssMnemonicDisplay cssOpacity"><span class="populateMnemonic"></span></div>
+    </div>
+    <!-- Ends -->
+    <!-- Display Pairing Code -->
+    <div class="settings viewJaxxToken cssSettings cssShowMnemonic"></div>
+    <!--Pair Devices Express/Custom Ends-->
+    <!--Help Panel-->
+    <div class="settings helpPage cssSettingsMnemonic">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Help
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssbackupTab2 cssHelpPage cssDarkBg">
+            <dl class="cssHelpMainWindow">
+                <!-- Bitcoin Help Menu -->
+                <dt>How do I send and receive funds?</dt>
+                <dd>To send funds from Jaxx, select the Send button. In the first box, enter your recipient's address, or select the QR icon in the text field to scan their QR code. In the second box, enter the amount of bitcoin / ether you want to send. If you wish to enter the amount in fiat currency, select the dollar symbol on the left. Select Send.
+                    <br>
+                    <br> Jaxx offers two methods to receive funds: scan the sender's QR code with the camera function, or generate a QR code requesting a specific amount by entering the amount and selecting Generate.</dd>
+                <dt>How can I convert between coins / tokens?</dt>
+                <dd>As of Jaxx v. 1.0.2., Jaxx partnered with leading blockchain asset exchange, ShapeShift, to enable in-app conversion. Select the fox icon on any wallet screen to view your ShapeShift options. A toggle will appear with the available coins for that wallet (e.g., BTC -> ETH). Select whether you want to convert in crypto or fiat currency, enter your amount in the Amount field then hit Shift. </dd> <dt>How do I backup Jaxx?</dt>
+                <dd>Jaxx offers users a 12-word Backup Phrase and a Pairing Code to backup and restore your funds, private keys, and transaction history. Go to Tools -> Backup Wallet to view and verify your Backup Phrase. We recommend writing down an exact copy of your Phrase and keeping it in a secure location.</dd> <dt>How do I sync Jaxx across devices?</dt>
+                <dd>From the Pair Devices menu, select Display Pairing Code. This will display both the QR code and the Backup Phrase associated with your wallet. Use the other device to scan the QR code (mobile/tablet only) or enter the Backup Phrase manually. </dd> <dt>How long will it take to receive funds after they've been sent?</dt>
+                <dd>It may take a few minutes to a few hours dependent on where your funds are being sent from. If your funds are being processed by an external service, such as an exchange, it may take up to an hour for you to receive your funds in Jaxx. It is also dependent on the level of activity on the blockchain. The bitcoin blockchain has been extremely congested so your bitcoin may take longer to appear, especially if you did not select a high mining fee. </dd> <dt>Does it cost anything to send and receive funds?</dt>
+                <dd>Jaxx is completely free to download and use on all platforms. However, the blockchain networks that administer your funds will charge a small processing fee per transaction to ensure that the transaction goes smoothly and to reward miners. Jaxx itself takes no commision. </dd> <dt>Can I point my mining rig payouts to Jaxx?</dt>
+                <dd>As Jaxx is a lightweight wallet that is not designed to receive mining payouts, we do not recommend pointing any payouts to Jaxx as it may cause issues on your end as well as potentially causing issues on our end. Click <a href="https://decentral.zendesk.com/hc/en-us/articles/227313008-Can-I-point-my-mining-rig-payouts-to-Jaxx-" target="_blank">here</a> for more information. </dd> <dt>What's an HD wallet and why does it change my addresses?</dt>
+                <dd>HD stands for "Hierarchical Deterministic." HD wallets generate a new address every time funds are received to your current address. This helps to keep your funds private. All previous addresses can be reused to receive funds and add to your Jaxx balance.
+                    <br>
+                    <br> In Jaxx, all coins are HD; however, all Ethereum ERC-20 tokens are not. </dd> <dt>What happens if I lose my Backup Phrase?</dt>
+                <dd>It is vital that you write down and store your wallet's Backup Phrase in a safe location, as it is the only way you can restore your entire Jaxx wallet. Your Backup Phrase is stored locally on your device so if you lose your Phrase, we will not be able to help you.</dd> <dt>Do I need internet access to use Jaxx?</dt>
+                <dd>In order to send funds and refresh your balance, you will need to be connected to the internet. However, you can take a screenshot of your QR code to enable users to send funds to your wallet whether or not you are online.</dd> <dt>Which devices can I access Jaxx?</dt>
+                <dd>Jaxx is available for most phones and tablets. It is also available as a desktop application for PC, Mac, and Linux, as well as an extension for Chrome. You can pair your wallet across all devices.</dd> <dt>Can I use unconfirmed funds?</dt>
+                <dd>Yes, you can use the funds in your Jaxx before they are displayed as Confirmed.</dd> <dt>What does Transfer Paper Wallet do?</dt>
+                <dd>Transfer Paper Wallet sends the funds from an existing private key into Jaxx by scanning its QR code or entering it in text form. This will not overwrite your existing wallet. </dd> <dt>How do I add a security PIN?</dt>
+                <dd>In Settings, select Setup Security PIN. Enter a 4-digit PIN then re-enter to confirm. This PIN will now be prompted to be entered whenever the Send function is used and whenever the wallet's pairing tools and private keys are accessed. This is basic security and we recommend utilizing your device's security features (e.g., fingerprint, lock screen, etc) for more advanced security.</dd> <dt>How do I reset my wallet?</dt>
+                <dd>The procedure to reset your wallet varies between devices. See more information <span class="menusHelpResetWalletLink">here</span>.</dd> <dt>My question isn't here! I need more support.</dt>
+                <dd>Head over to our support page on <span class="menusAboutWebsiteLink">jaxx.io</span> to let us know about your specific problem with as much information as possible! Our Customer Success Team will get back to you as soon as possible. </dd>
+            </dl>
+            <!-- Bitcoin Help Menu Ends -->
+        </div>
+    </div>
+    <!--Help Panel Ends-->
+    <!-- Bulletin List Begins -->
+    <div class="settings bulletinPage cssBulletinPage cssMenuPage cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Bulletins
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <div class="cssScrollableMenuListWrapper">
+            <div class="cssItem scrollableMenuList cssScrollableMenuList">
+                <div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.showCoinBulletin">
+                    <div class="cssImageLogoBannerETH cssCoinSelector coinTypeETH cssHighlighted"></div>
+                    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                        <div class="optionTrigger cssOptionTrigger">
+                            <div class="optionHeading cssOptionHeading">
+                                <label class="menuCoinBulletinTitle cssMenuCoinBulletinTitle">ETH upgrade in process.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="posted_details">
+                    <div class="postedLabel cssPostedLabel">Posted:</div>
+                    <div class="postedDate cssPostedDate">2016-03-30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bulletin List Ends -->
+    <!--About Panel-->
+    <div class="settings aboutPage cssSettingsMnemonic">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">About
+            <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+        </div>
+        <!--Table format for About Page-->
+        <table class="cssVersion" style="width:100%">
+            <div class="imageJaxxKrypto"></div>
+            <tr class="aboutPage">
+                <td valign="top" width="46%">
+                    <p>Version</p>
+                </td>
+                <td>
+                    <p class="cssAboutInfo">1.3.15</p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" width="46%">
+                    <p>Configuration</p>
+                </td>
+                <td id="ConfigInfo" class="configInfo">
+                    N/A
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>Website</p>
+                </td>
+                <td valign="top">
+                    <p class="cssAboutInfo"><span class="menusAboutWebsiteLink changeLogSummaryWebsite">www.jaxx.io</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>Feedback/Support</p>
+                </td>
+                <td valign="top">
+                    <p class="cssAboutInfo"><span class="menusAboutWebsiteContact changeLogSummaryWebsiteContact">https://decentral.zendesk.com/hc/en-us</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>Terms of Service</p>
+                </td>
+                <td valign="top">
+                    <p class="cssAboutInfo scriptAction changeLogSummaryTermsOfService" specialAction="jaxx_ui_intro.showTermsOfService"><span><a href="#">show terms of service</a></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>Privacy Policy</p>
+                </td>
+                <td valign="top">
+                    <p class="cssAboutInfo scriptAction changeLogSummaryPrivacyPolicy" specialAction="jaxx_ui_intro.showPrivacyPolicy"><span><a href="#">show privacy policy</a></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>What is new</p>
+                </td>
+                <td valign="top">
+                    <p class="cssAboutInfo"><span class="menusAboutWebsiteChangeLog changeLogSummaryChangeLog">changelog</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <p>Copyright</p>
+                </td>
+                <td>
+                    <p class="cssAboutInfo changeLogSummaryCopyright">Decentral 2017</p>
+                </td>
+            </tr>
+        </table>
+        <div class="cssAbout">
+            <div class="cssChangeLog">
+                <div class="cssChangeLogCenter changeLogCenter">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--About Panel Ends-->
+    <!--OneName Panels-->
+    <div class="settings onenameSelect cssOneName cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <h2>What is OneName?</h2>
+            <div class="cssOpacity">
+                <h1>Choose your OneName username:</h1> </div>
+            <div class="cssOneNameTabContent">
+                <div class="address input cssInput cssGapSmall">
+                    <input type="text" autocorrect="off" autocomplete="false" placeholder="Enter username" /> </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction button next cssButton cssBlueButton" pushSettings="cssOneNameConfirmed">Next</div>
+        </div>
+    </div>
+    <div class="settings onenameConfirm cssOneNameConfirmed cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOpacity">
+                <h1>Your OneName username has been submitted. Once you confirm your OneName, we'll notify you when your OneName has been secured, so you can complete your profile.</h1> </div>
+            <div class="cssOneNameUser cssCenter">+<span class="populatePendingOnename"></span></div>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction button cssEnabled cssBlueButton" specialAction="onename.register">Claim</div>
+        </div>
+    </div>
+    <div class="settings onenameComplete cssOneNameComplete cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOpacity">
+                <h1 class="cssCenter">Complete your OneName profile</h1> </div>
+            <div class="cssOneNameUser cssCenter">+<span class="populateOnename"></span></div>
+        </div>
+        <div class="cssCenter">
+            <div class="cssItem">
+                <div class="scriptAction cssBlueButton cssButtonSignup cssEnabled" pushSettings="cssOneNameTwitter">Complete with Twitter</div>
+            </div>
+            <br>
+            <div class="cssItem">
+                <div class="scriptAction cssBlueButton cssButtonSignup cssEnabled" pushSettings="cssOneNameManually">Complete Manually</div>
+            </div>
+        </div>
+    </div>
+    <div class="settings cssOneNameManually cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOneNameTabContent">
+                <div class="address input cssInput">
+                    <input type="text" autocorrect="off" autocomplete="off" placeholder="Enter Full Name" /> </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction button cssButton" pushSettings="cssOneNameManualProfile">Next</div>
+        </div>
+    </div>
+    <div class="settings cssOneNameManualProfile cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOneNameTabContent cssCenter">
+                <p>Your OneName profile has been updated</p>
+                <div class="imageProfile scriptAction" openModal="profile"></div>
+                <h2>+RichardRichardson21</h2>
+                <h1>Richard Richardson</h1> </div>
+        </div>
+    </div>
+    <div class="settings onenameTwitter cssOneNameTwitter cssSettingsBackup">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">Twitter Profile</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOneNameTabContent">
+                <div class="address input cssInput">
+                    <h1>@</h1>
+                    <input autocorrect="off" autocapitalize="none" autocomplete="off" type="text" placeholder="Enter Twitter Username" /> </div>
+            </div>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction button cssBlueButton" pushSettings="onenameTwitterProfile">Next</div>
+        </div>
+    </div>
+    <div class="settings onenameTwitterProfile cssOneNameTwitterProfile cssSettingsBackup cssSB2">
+        <div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+        <div class="scriptAction cssHeader" popSettings="true">OneName</div>
+        <div class="cssItem cssBackup cssOneNameTab">
+            <div class="cssOneNameTabContent cssCenter">
+                <div class="populateAvatar cssAvatar"></div>
+                <h2>+<span class="populateOnename"></span></h2>
+                <h1><span class="populateName"></span></h1>
+                <h1><div class="imageTwitter"></div>@<span class="populateTwitter"></span></h1>
+            </div>
+        </div>
+        <div class="cssItem cssCenter">
+            <div class="scriptAction button cssBlueButton" pushSettings="onenameTwitterProfile">Confirm</div>
+        </div>
+    </div>
+    <div id="ViewPortMain">
+
+    </div>
+    <div id="noise"></div>
+
+    <div id="SnackBarContainer">
+        <style>
+            #SnackBarContainer{
+                position: absolute;
+                bottom: 0;
+            }
+        </style>
+    </div>
+
+
+    <!--OneName Panels End-->
+
+    <script type="text/javascript" src="jsdist/app/Registry.js"></script>
+    <script type="text/javascript" src="jsdist/app/intro/intro-pages-main.js"></script>
+    <script type="text/javascript" src="jsdist/app/intro/pages-wallet-settings.js"></script>
+
+
+    <script type="text/javascript" src="jsdist/com/formatters.js"></script>
+    <script type="text/javascript" src="jsdist/com/models.js"></script>
+    <script type="text/javascript" src="jsdist/com/Utils.js"></script>
+    <script type="text/javascript" src="jsdist/com/Utils2.js"></script>
+    <script type="text/javascript" src="jsdist/com/seed.js"></script>
+    <script type="text/javascript" src="jsdist/utils/performance-monitor.js"></script>
+
+    <script type="text/javascript" src="jsdist/app/mining-fee/mining-fee-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/mining-fee/mining-fee-view.js"></script>
+
+    <script type="text/javascript" src="jsdist/com/coin-controller-base.js"></script>
+    <script type="text/javascript" src="jsdist/com/generator-blockchain.js"></script>
+    <script type="text/javascript" src="jsdist/com/math.js"></script>
+    <script type="text/javascript" src="jsdist/com/fileManager.js"></script>
+    <script type="text/javascript" src="jsdist/com/service-mapper.js"></script>
+    <script type="text/javascript" src="jsdist/com/wallet-health.js"></script>
+
+
+    <script type="text/javascript" src="jsdist/com/clipboard.js"></script>
+    <script type="text/javascript" src="jsdist/com/data-validator.js"></script>
+
+
+
+
+    <script type="text/javascript" src="jsdist/coin-bitcoin/coin-service.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/coin-controller.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/coin-storage.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/insight-api.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/decentral-api.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/ubiety-api.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/restore-history-insight.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/coin-transactions-utils.js"></script>
+    <script type="text/javascript" src="jsdist/coin-bitcoin/btc-test-service.js"></script>
+
+    <script type="text/javascript" src="js/jaxx_main/jaxx_ui/jaxx_ui.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum/ethereum-classic-service.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum/ethereum-service.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum/ethereum-controller.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum/ethereum-transactions-utils.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum-token/token-controller.js"></script>
+    <!--<script type="text/javascript" src="jsdist/ethereum-token/token-transactions.js"></script>-->
+    <script type="text/javascript" src="jsdist/ethereum-token/token-transactions-utils.js"></script>
+    <script type="text/javascript" src="jsdist/ethereum-token/token-service.js"></script>
+    <script type="text/javascript" src="jsdist/app/coins-navigator/coins-menus.js"></script>
+    <script type="text/javascript" src="jsdist/app/intro/pages-wallet-settings.js"></script>
+    <script type="text/javascript" src="jsdist/app/intro/intro-pages-main.js"></script>
+   <!-- <script type="text/javascript" src="js/datastore/crypto_enabling_disabliing.js"></script>-->
+   <!-- <script type="text/javascript" src="js/datastore/outgoing_transaction_controller.js"></script>-->
+    <script type="text/javascript" src="jsdist/com/transactions_updater.js"></script>
+    <script type="text/javascript" src="jsdist/com/datastore_local.js"></script>
+   <!-- <script type="text/javascript" src="js/datastore/crypto_controller.js"></script>-->
+   <!-- <script type="text/javascript" src="js/datastore/refresh_data_controller.js"></script>-->
+    <script type="text/javascript" src="jsdist/app/fiat-price-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/navigation-tool-menu/navigation-tool-menu-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/transaction-history/transaction-history-view.js"></script>
+    <script type="text/javascript" src="jsdist/app/transfer-paper-wallet/transfer-paper-wallet-menu.js"></script>
+    <script type="text/javascript" src="jsdist/app/transfer-paper-wallet/transfer-paper-wallet-warning.js"></script>
+    <script type="text/javascript" src="jsdist/app/transfer-paper-wallet/transfer-paper-wallet.js"></script>
+    <script type="text/javascript" src="jsdist/app/transfer-paper-wallet/sweep-private-key.js"></script>
+    <script type="text/javascript" src="jsdist/app/transfer-paper-wallet/paper-wallet-transaction-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/view-balance/view-balance.js"></script>
+    <script type="text/javascript" src="jsdist/app/view-balance/fiat-balance.js"></script>
+    <script type="text/javascript" src="jsdist/app/view-main-page.js"></script>
+    
+    <script type="text/javascript" src="jsdist/app/send-transaction/send-transaction-components.js"></script>
+    <script type="text/javascript" src="jsdist/app/shape-shift/shape-shift-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/shape-shift/shape-shift-not-available.js"></script>
+    <script type="text/javascript" src="jsdist/app/shape-shift/shape-shift-components.js"></script>
+    <script type="text/javascript" src="js/app/shape-shift/DCShapeShift.js"></script>
+    <script type="text/javascript" src="js/app/shape-shift/DCUtil.js"></script>
+    <script type="text/javascript" src="js/app/shape-shift/DCConfig.js"></script>
+    <script type="text/javascript" src="js/app/shape-shift/DCCoin.js"></script>
+    <script type="text/javascript" src="jsdist/app/send-transaction/send-transaction-fiat-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/send-transaction/send-transaction-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/send-transaction/receive-transaction-view.js"></script>
+    <script type="text/javascript" src="jsdist/app/bch-claim/bch-claim-controller.js"></script>
+
+
+    <script type="text/javascript" src="jsdist/app/address-book/address-book-controller.js"></script>
+
+
+    <script type="text/javascript" src="jsdist/app/com/confirm-box.js"></script>
+
+    <script type="text/javascript" src="jsdist/app/network/network-connection.js"></script>
+
+    <script type="text/javascript" src="jsdist/app/display-pairing-code/display-pairing-code-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/view-backup-phrase/view-backup-phrase-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/pair-restore-wallet/pair-restore-wallet-controller.js"></script>
+    <!-- Private Key List -->
+    <script type="text/javascript" src="jsdist/app/private-key-list/private-key-list.js"></script>
+    <script type="text/javascript" src="jsdist/app/datastore_controller.js"></script>
+    <script type="text/javascript" src="jsdist/com/address-verifier.js"></script>
+    <!--<script type="text/javascript" src="js/datastore/crypto_controller.js"></script>-->
+    <!-- Private Keys -->
+    <script type="text/javascript" src="jsdist/app/private-keys/private-keys-view-controller.js"></script>
+    <!-- Export Private Keys -->
+    <script type="text/javascript" src="jsdist/app/export-private-keys/export-private-keys-view-controller.js"></script>
+    <!--Modal View-->
+    <script type="text/javascript" src="jsdist/app/modal-view/modal-view-controller.js"></script>
+    <script type="text/javascript" src="jsdist/app/Application.js"></script>
+   <!-- <script type="text/javascript" src="js/vault/vault.js"></script>-->
+    <script type="text/javascript" src="js/jaxx_main/jaxx_shapeshift_helper.js"></script>
+    <script type="text/javascript" src="js/wallet/hdwallet_helper.js"></script>
+    <script type="text/javascript" src="js/wallet/hdwallet_main.js"></script>
+    <!--<script type="text/javascript" src="js/jaxx_main/jaxx_globalDispatcher.js"></script>-->
+    <!--<script type="text/javascript" src="js/jaxx_main/jaxx_tx_manager.js"></script>-->
+    <script type="text/javascript" src="js/jaxx_main/jaxx_initializer.js"></script>
+    <script type="text/javascript" src="js/jaxx_main/jaxx_controller.js"></script>
+    <script type="text/javascript" src="js/jaxx_main/jaxx_settings.js"></script>
+    <script type="text/javascript" src="js/jaxx_main/jaxx_user.js"></script>
+    <!-- JaxxUI files -->
+    <script type='text/javascript' src="js/jaxx_main/jaxx_ui/jaxx_ui_intro.js"></script>
+    <script type='text/javascript' src="js/jaxx_main/jaxx_ui/jaxx_ui.js"></script>
+    <script type="text/javascript" src="js/jaxx_main/jaxx_app.js"></script>
+    <script type="text/javascript" src="js/jaxx.js"></script>
+
+</body>
+</html>

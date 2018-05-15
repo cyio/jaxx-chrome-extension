@@ -1,0 +1,115 @@
+<link rel="stylesheet" type="text/css" href="css/shapeShift.css">
+
+<div class="spendableShapeshift cssShapeShift">
+
+    <div class="cssShapeShiftAndToggle shapeShiftHeader">
+        <span class="greyText opBy">Operated by</span> <div class="cssShapeShiftPanel"></div>
+        <div id="shapeShiftInfoButton" class="scriptAction cssInfo" openModal="shapeShiftInfo"></div>
+    </div>
+
+    <div class="dropDowns">
+        <div class="cssCurrencyToggleFirst currencyToggleFirst">
+
+            <div id="ShapeShift-From"
+                 class="imageLogoCurrencyToCurrency shapeShiftSwitchFrom cssShapeshiftSwitchFrom coinSelectorDropdown cssHighlighted cssSourceCoin">
+                <span class="cssCoinText shapeShiftMenuText"></span>
+
+                <div id="ShapeShift-buttonShowList-From" class="displayCoinsArrow cssDisplayCoinsArrow scriptAction"
+                     specialaction="toggleShapeshiftCoinSelector">
+                    <img id="ShapeShift-buttonShowList-Image-From" src="images/ui_elements/blue-dropdown.svg" alt=""
+                         class="cssFlipped">
+                </div>
+            </div>
+
+            <img class="cssArrowcoinToCoin" src="images/ui_elements/double-arrow.svg" alt="">
+
+            <div id="ShapeShift-To"
+                 class="imageLogoCurrencyToCurrency shapeShiftSwitchTo cssShapeshiftSwitchTo coinSelectorDropdown cssHighlighted">
+                <span class="cssCoinText shapeShiftMenuText"></span>
+
+                <div id="ShapeShift-buttonShowList" class="displayCoinsArrow cssDisplayCoinsArrow">
+                    <img id="ShapeShift-buttonShowList-Image" src="images/ui_elements/blue-dropdown.svg" alt=""
+                         class="cssFlipped">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="ShapeShiftListViewFrom" class="wrapTableShapeshiftCoinMenu cssWrapTableShapeShiftCoinMenuFrom cssList cssZeroMarginLeftOverride">
+    <table class="cssTableShapeshiftCoinSelectionMenu" cellspacing="0" cellpadding="0">
+        <tbody id="ShapeshiftCoinSelectionListFrom"
+               class="shapeshiftCoinSelectionMenu cssList cssShapeshiftCoinSelectionMenu">
+        </tbody>
+    </table>
+</div>
+
+<div id="ShapeShiftListView" class="wrapTableShapeshiftCoinMenu cssWrapTableShapeShiftCoinMenu cssList cssZeroMarginLeftOverride">
+    <table class="cssTableShapeshiftCoinSelectionMenu" cellspacing="0" cellpadding="0">
+        <tbody id="ShapeshiftCoinSelectionList"
+               class="shapeshiftCoinSelectionMenu cssList cssShapeshiftCoinSelectionMenu">
+        </tbody>
+    </table>
+</div>
+
+<div class="spendableShapeshift cssShapeShiftInfo">
+    <div class="cssRates">
+        <span class="cssMiddleSpan dataMargins">
+            <ul class="desktopPaddingAdjust">
+                <li>
+                    Deposit Min: (<span class="shapeShiftAbbreviatedUnitSend"></span>)
+                </li>
+                <li>
+                    <span id="ShapeShiftDepositMin" class="shapeShiftDepositMin depositMargins"></span>
+                    <span id="depositMinCaution" class=""></span>
+                </li>
+            </ul>
+        </span>
+        <span class="cssLastSpan dataMargins">
+            <ul>
+                <li>
+                    Deposit Max: (<span class="shapeShiftAbbreviatedUnitSend"></span>)
+                </li>
+                <li>
+                    <span id="ShapeShiftDepositMax" class="shapeShiftDepositMax depositMargins"></span>
+                    <span id="depositMaxCaution" class=""></span>
+                </li>
+            </ul>
+            <div id="shapeShiftMaxButton" class="shapeShiftMax">MAX</div>
+        </span>
+        <span class="cssBefore before greyText">
+            <ul class="desktopPaddingAdjust">
+                <li>Instant Rate: 1
+                    <span class="shapeShiftAbbreviatedUnitSend"></span> =
+                    <span id="ShapeShift-rate" class="shapeShiftExchangeRate"></span>
+                    <span id="ShapeShift-symbolTo1" class="shapeShiftAbbreviatedUnitReceive"></span>
+                </li>
+            </ul>
+        </span>
+    </div>
+</div>
+
+<div class="shapeShiftInfo cssShapeShiftInfoWindow modal cssModal cssFull visible">
+    <div id="ShapeShiftHelp" class="cssContent">
+        <div id="ShapeShiftClose" class="scriptAction cssHeader" closeModal="true">ShapeShift
+            <div class="cssClose cssNoSelect">x</div>
+        </div>
+        <div class="cssItem cssCenter cssShapeShiftInfoModal">
+            <p> ShapeShift is a third-party service offered by ShapeShift AG, a company based in Zug, Switzerland. </p>
+            <p> ShapeShift lets you convert (or "Shift") between some of the digital assets supported by Jaxx. Enter the
+                amount you want to convert (either in currency or the digital asset currently being displayed), then,
+                using the drop-down menu just below the "Shift" button, select what coin type you would like to convert
+                to. </p>
+            <p> At the bottom of the ShapeShift display, you'll see the current conversion rate and the minimum and
+                maximum transaction size allowed by ShapeShift. </p>
+            <p> Once you've made your selection, select <span>Shift</span>. This will bring you to a confirmation screen
+                where you can review and complete the transaction. </p>
+            <p class="cssLastParagraphShapeShiftInfo">Please note that ShapeShift transactions may take up to 10-20
+                minutes to appear in the target coin's wallet screen.
+            <p> ShapeShift services are integrated into Jaxx as a convenience for you, at no-cost. All support inquiries
+                should be directed to ShapeShift through their support page.</p>
+        </div>
+    </div>
+</div>

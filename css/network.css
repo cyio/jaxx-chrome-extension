@@ -1,0 +1,51 @@
+#HamburgerMenu .network-indicator{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100% 100%;
+    transform:translate(-5px, 3px);
+    background-color: red;
+}
+
+#HamburgerMenu .network-indicator.bg-green{
+    background-color: green;
+}
+
+
+.init-message{
+  /*  position: absolute;
+    top: -5px;
+    left: 14px;*/
+    color: red;
+
+}
+
+.invisible{
+    opacity: 0;
+}
+
+a.btn{
+    color: inherit;
+    text-decoration: none;
+}
+
+a.btn.left{
+    width: calc(50% - 20px);
+    margin-left: 20px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 60px;
+    float: left;
+    text-align: left;
+    cursor: pointer;
+}
+.alert.anim{
+    transition: 0.5s ease-in-out;
+}
+
+.alert.hidden{
+transform:translate3d(0, 100%, 0);
+}

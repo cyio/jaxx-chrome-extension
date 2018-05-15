@@ -1,0 +1,1365 @@
+.cssShapeShiftCoinListItem .icon {
+    height: 100%;
+    width: 50px;
+    padding-right: 3px;
+    margin: 12px;
+    display: list-item;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cssShapeShiftCoinListItem .icon {
+    height: 100%;
+    width: 2px;
+    max-width: 25px;
+}
+
+.cssShapeShiftAndToggle {
+    display: block;
+    position: relative;
+    height: 20px;
+}
+
+.cssContent .cssShapeShiftInfoModal {
+    text-align: left;
+}
+
+.cssContent .cssShapeShiftInfoModal p {
+    line-height: 20px;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.cssContent .cssShapeShiftInfoModal span {
+    font-weight: bolder;
+}
+
+.cssContent .cssShapeShiftInfoModal .cssLastParagraphShapeShiftInfo {
+    margin-bottom: 0;
+}
+
+.cssShapeShiftInfoModal {
+    padding-bottom: 20px;
+}
+
+.cssShapeShiftTogglelist {
+    margin: 0 78px 0 0;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.cssShapeShiftTogglelist li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cssShapeShiftToggleItem {
+    margin: 0 2em;
+}
+
+.cssShapeShiftAndToggle .cssCurrencyToggleFirst {
+    margin-left: -4px;
+    position: relative;
+    display: inline-block;
+    bottom: 2px;
+    font-size: 1em;
+}
+
+.cssShapeShift .cssDisplayCoinsArrow {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.cssShapeShift .cssDisplayCoinsArrow .cssFlipped {
+    -moz-transform: scaleY(-1) !important;
+    -o-transform: scaleY(-1) !important;
+    -webkit-transform: scaleY(-1) !important;
+    transform: scaleY(-1) !important;
+    -ms-filter: "flipv" !important;
+}
+
+.cssShapeShift .cssDisplayCoinsArrow img {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 2px;
+}
+
+.cssShapeShiftAndToggle .cssArrowcoinToCoin {
+    float: left;
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+
+.cssArrowcoinToCoin {
+    margin-top: 6px;
+    margin-left: 15px;
+    margin-right: 15px;
+    filter: brightness(175%);
+    height: 18px;
+    width: 28px;
+}
+
+.cssCoinText {
+    position: relative;
+    margin-left: 25px;
+    top: 3px;
+    font-size: 1em;
+}
+
+.cssSourceCoin {
+    cursor: default !important;
+}
+
+.shapeShiftMenuText {
+    margin-left: 35px;
+    top: -7px;
+}
+
+.cssShapeshiftTab {
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 160px;
+    margin: auto;
+}
+
+.cssShapeshiftTab2 {
+    height: 40px;
+    width: 45px;
+    background-color: #0D0D0D;
+    position: fixed;
+    margin-top: 10px;
+    margin-left: -2px;
+    z-index: -1;
+}
+
+input.cssValidShapeshift {
+    color: #55779F;
+}
+
+input.cssValidShapeshiftAmount {
+    color: #B22222;
+}
+
+.cssShift .cssHeader {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.cssModal.cssShift .cssAmount {
+    color: #ff6c0e;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.cssModal.cssShift .cssAmount .cssUnit {
+    font-size: 10pt;
+}
+
+.cssShiftInfo .cssItem {
+    margin-top: 1em;
+}
+
+.cssShapeShift {
+    padding-top: 1px;
+    font-size: 13px;
+}
+
+.cssShapeShift .cssShapeShiftPanel {
+    background-image: url('../images/ui_elements/shapeShift-logo.svg');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 31px;
+    width: 100px;
+    display: inline-block;
+    margin-top: 2%;
+    margin-bottom: -1%;
+}
+
+.cssShapeShiftInfo {
+    font-size: 0.66em;
+    text-align: center;
+}
+
+.cssShapeShiftInfo span {
+    display: inline-block;
+    margin-top: 2.5%;
+}
+
+.cssShapeShiftInfo .cssLastSpan:before {
+    content: '';
+    width: 0;
+    height: 26px;
+    border: 1px solid #777777;
+    display: inline-block;
+}
+
+.cssShapeShiftInfo span ul {
+    margin: 0;
+}
+
+.cssShapeShiftInfo .cssRates .cssBefore {
+    float: left !important;
+    text-align: left;
+}
+
+.cssShapeShiftInfo .cssRates .cssMiddleSpan {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left !important;
+}
+
+.cssShapeShiftInfo .cssRates .cssMiddleSpan:before {
+    content: '';
+    width: 0;
+    height: 26px;
+    border: 1px solid #6a6a6a;
+    display: inline-block;
+}
+
+.cssShapeShiftInfo .cssRates .cssLastSpan {
+    float: right !Important;
+    text-align: left;
+}
+
+.cssShapeShiftInfo .cssRates {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cssShapeShiftInfo span ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.cssShapeShiftInfoWindow p {
+    padding-bottom: 0;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+
+.cssShiftInfo .cssContent {
+    padding-bottom: 15px;
+}
+
+.cssModal.cssShiftInfo .cssItem p {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.cssModal.cssShiftInfo ul {
+    margin-top: 1em;
+    list-style: decimal;
+    font-size: 0.85em;
+}
+
+.cssModal.cssShiftInfo li {
+    margin-bottom: 0.5em;
+}
+
+.cssShiftInfo .cssButtons {
+    margin-bottom: 5px;
+}
+
+.cssShiftInfo .cssItem .cssLeft {
+    text-align: left !important;
+    padding-right: 0.5em;
+}
+
+.cssShiftingParagraph {
+    padding-top: 20px;
+}
+
+.cssShift .cssNotice p {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-top: 0;
+}
+
+.cssShift .cssButtons .cssButton {
+    width: 124px
+}
+
+.cssShift .cssBackContinue {
+    position: relative !important;
+}
+
+.cssTableShapeshiftCoinSelectionMenu {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.cssShapeshiftCoinSelectionMenu {
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 5px;
+    z-index: 100000;
+    border-radius: 6px;
+}
+
+.cssShapeshiftCoinSelectionMenu tr {
+    display: table-row;
+    height: 40px;
+    line-height: 20px;
+    padding-top: 0;
+    background-color: #333333;
+    cursor: pointer;
+    border-bottom: 1px solid #444444;
+}
+
+.cssShapeshiftCoinSelectionMenu tr:hover {
+    background-color: #444444;
+}
+
+.cssShapeshiftCoinSelectionMenu .cssAdditionalElement {
+    border-top: 1px solid #6a6a6a;
+}
+
+.cssShapeshiftSwitchTo {
+    float: right !important;
+}
+
+.cssShapeshiftCoinSelectionMenu .cssBlueHighlight {
+    background-color: #4e4e4e !important;
+}
+
+.cssShapeShiftCoinListItem .icon {
+    height: 100%;
+    width: 2px;
+    padding: 0 10px;
+    max-width: 25px;
+}
+
+.cssShapeShiftCoinListItem .icon .span {
+    background-size: 20px;
+}
+
+.cssShapeShiftCoinListItem .label {
+    width: 200px;
+    height: 100%;
+}
+
+.cssWrapTableShapeShiftCoinMenu, .cssWrapTableShapeShiftCoinMenuFrom {
+    overflow-y: auto;
+    display: none;
+    overflow-x: hidden;
+    width: 230px;
+    max-height: 270px;
+    margin-left: 35px;
+    background: #2f3a47;
+    z-index: 1000;
+    position: absolute;
+    top: 198px;
+    left: 10px;
+}
+
+.cssWrapTableShapeShiftCoinMenu {
+    right: 10px;
+}
+
+.cssWrapTableShapeShiftCoinMenu::-webkit-scrollbar, .cssWrapTableShapeShiftCoinMenuFrom::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssWrapTableShapeShiftCoinMenu::-webkit-scrollbar-thumb, .cssWrapTableShapeShiftCoinMenuFrom::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 10px;
+}
+
+.cssWrapTableShapeShiftCoinMenu::-webkit-scrollbar-track, .cssWrapTableShapeShiftCoinMenuFrom::-webkit-scrollbar-track {
+    background-color: #222222;
+}
+
+.cssShapeShiftswitchFrom {
+    float: left;
+}
+
+.cssShapeshiftCoinSelectionMenu .cssBlueHighlight {
+    background-color: #4e4e4e !important;
+}
+
+.cssShapeShiftCoinListItem .icon {
+    height: 100%;
+    width: 2px;
+    padding-left: 8px;
+    max-width: 25px;
+}
+
+.cssShapeShiftCoinListItem .icon .span {
+    background-size: 20px;
+}
+
+.cssShapeShiftCoinListItem .label {
+    width: 200px;
+    height: 100%;
+}
+
+.cssShapeShiftInfoWindow {
+    overflow-y: auto;
+}
+
+.opBy {
+    margin-right: 1%;
+}
+
+.dataMargins {
+    margin-top: 1% !important;
+}
+
+#shapeShiftInfoButton {
+    margin-right: 0;
+    margin-bottom: -1%;
+}
+
+#shapeshiftNotAvailable > div > div {
+    padding: 0 16px;
+}
+
+#shapeshiftNotAvailable > div .modal-footer {
+    padding: 0;
+}
+
+#shapeshiftNotAvailable .modal-title {
+    font-weight: 100;
+    padding-top: 16px;
+    position: relative;
+}
+
+#shapeshiftNotAvailable .cssClose {
+    float: right;
+    cursor: pointer;
+    margin: 0;
+    padding: 13px 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#shapeshiftNotAvailable .modal-long-description {
+    font-size: 14px;
+    font-weight: 100;
+    padding-top: 16px;
+}
+
+#shapeshiftNAUnderstand:hover {
+    cursor: pointer;
+}
+
+.shapeShiftHeader {
+    margin-top: -35%;
+    text-align: center;
+}
+
+.cssCurrencyToggleFirst {
+    padding-top: 8%;
+}
+
+.coinSelectorDropdown {
+    float: left;
+    height: 27px;
+    width: max-content;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+
+.dropDowns {
+    justify-content: center;
+    display: flex;
+}
+
+.caution {
+    background-image: url('../images/ui_elements/caution.svg');
+    background-repeat: no-repeat;
+    background-size: 36%;
+    height: 14px;
+    width: 45px;
+    margin-top: 0 !important;
+}
+
+.cssShapeShiftConfirmation {
+    font-weight: 200;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-title {
+    padding: 15px;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body-top {
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body-bottom {
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-top-title {
+    margin-bottom: 10px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title-description-visible {
+    margin-bottom: 30px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+    margin-bottom: 40px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .cssCodeAddress {
+    font-size: 0.9em;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body ul li {
+    height: 30px;
+    line-height: 30px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup input[type=radio]:checked ~ .check {
+    border: 1px solid #fff;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup tr td:hover .check {
+    border: 1px solid #fff;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup input[type=radio]:checked ~ .check::before {
+    background: #000;
+    height: 10px;
+    width: 11px;
+    top: 2px;
+    left: 2px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .cssButtonGroup tr td .check {
+    left: 42.4%;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalMiningFeeText {
+    margin: 10px;
+    text-align: center;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalTermsText {
+    margin: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalTermsText a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.conversionConfirmation {
+    background-color: rgba(0, 0, 0, 0.20);
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 11pt;
+}
+
+.shapeShiftMax {
+    display: inline;
+    margin-left: 7px;
+    margin-right: -3px;
+    padding: 5px 7px;
+    border: 1px solid #B9B9B9;
+    background: #54739D;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 100;
+    float: right;
+}
+
+.subtitle {
+    font-size: 10pt;
+    font-weight: 100;
+    text-align: left;
+    margin-left: 0 !important;
+}
+
+.confirmationArrow {
+    display: table-cell;
+    vertical-align: middle;
+    width: 30%;
+    height: 51px;
+    margin: 0 auto;
+}
+
+.mining-fee-title {
+    font-size: 9pt;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.confirmationBox {
+    display: table;
+}
+
+.confirmationValue {
+    display: table-cell;
+    width: 35%;
+    vertical-align: middle;
+}
+
+#fiatToCrypto .symbol {
+    margin-right: 3px;
+}
+
+.amountAbbreviatedNameReceive, .amountAbbreviatedNameSend {
+    margin-left: 3px;
+}
+
+.coinSelectorDropdown {
+    cursor: pointer !important;
+}
+
+.coinSelectorDropdown:hover .cssCoinText.shapeShiftMenuText {
+    color: #9c9c9c;
+}
+
+.greenButtonIntroLeft {
+    text-align: center;
+    width: calc(49.7%);
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 60px;
+    float: left;
+    cursor: pointer;
+    border-right: 1px solid #FFFFFF;
+}
+
+.greenButtonIntroRight {
+    text-align: center;
+    width: calc(49.7%);
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 60px;
+    float: right;
+    cursor: pointer;
+}
+
+.mainAmountInputShift {
+    margin-top: 22%;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 300px) {
+    .cssShapeShiftInfo .cssRates {
+        text-align: center;
+        margin-left: -6px;
+        margin-top: 3px;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssBefore {
+        width: 100%;
+        margin-left: -1px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .cssShapeShift .cssShapeShiftPanel {
+        width: 85px !important;
+        margin-top: 2%;
+        margin-bottom: -9px;
+    }
+
+    .cssShapeShift .cssDisplayCoinsArrow img {
+        height: 18px;
+        width: 18px;
+        margin-bottom: 4px;
+    }
+
+    .cssShapeShiftTogglelist {
+        margin-left: 51px;
+        margin-bottom: 2px;
+    }
+
+    .cssShapeShiftInfo span ul {
+        padding-left: 0.3em !important;
+        padding-right: 0.3em;
+    }
+
+    .cssContent .cssShapeShiftInfoModal p {
+        line-height: 18px;
+        font-size: 14px;
+    }
+
+    .cssShapeShiftAndToggle .cssCurrencyToggleFirst {
+        margin-left: -6px;
+    }
+
+    .cssArrowcoinToCoin {
+        margin-top: 2px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenu, .cssWrapTableShapeShiftCoinMenuFrom {
+        width: 210px !important;
+        font-size: 12px;
+        top: 175px;
+        left: 105px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenuFrom {
+        left: 5px;
+    }
+
+    .cssShapeshiftCoinSelectionMenu tr {
+        height: 31px;
+        line-height: 20px;
+    }
+
+    .cssShapeShiftCoinListItem .icon {
+        margin: 10px !important;
+    }
+
+    .cssModal.cssShift .cssAmount {
+        font-size: 16px;
+    }
+
+    .cssShapeshiftTab {
+        width: 124px;
+    }
+
+    .mining-fee-title {
+        font-size: 12px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 5px 0 !important;
+    }
+
+    .coinSelectorDropdown {
+        height: 20px;
+    }
+
+    .cssShapeShift .cssDisplayCoinsArrow {
+        margin-top: 2px;
+        margin-left: 5px;
+    }
+
+    .shapeShiftMenuText {
+        margin-left: 25px;
+        top: -8px;
+    }
+
+    .cssInput {
+        height: 30px;
+    }
+
+    .cssImageCamera {
+        padding-top: 11px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .amountAbbreviatedNameSend, .amountAbbreviatedNameReceive {
+        margin-left: 0;
+    }
+
+    .subtitle {
+        font-size: 9pt;
+    }
+
+    #shapeShiftInfoButton {
+        margin-bottom: -6px;
+        margin-left: -5px;
+    }
+
+    #fiatToCrypto {
+        font-size: 7pt;
+        width: 45px;
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .cssShapeshiftTab {
+        width: 140px;
+    }
+
+    #amountInput {
+        margin-bottom: 2px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenuFrom {
+        top: 184px;
+        left: 5px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenu {
+        top: 184px;
+        right: 5px;
+    }
+
+    @media only screen and (min-width: 375px) {
+        .cssShapeshiftTab {
+            width: 145px;
+        }
+
+        .amountAbbreviatedNameReceive, .amountAbbreviatedNameSend {
+            margin-left: 2px;
+        }
+
+        .mining-fee-title {
+            font-size: 13pt;
+        }
+
+        .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+            margin: 25px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    .cssShapeShiftInfo {
+        font-size: 0.75em;
+    }
+
+    .cssShapeShiftInfo .cssRates {
+        text-align: center;
+        margin-left: -6px;
+    }
+
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 40px;
+    }
+
+    .cssShapeshiftTab {
+        width: 158px;
+    }
+}
+
+@media only screen and (min-width: 412px) {
+    /* This class should apply if BTC description is not available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 15px 0 15px;
+    }
+
+    /* This class should apply if BTC description is available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title-description-visible {
+        margin: 15px 0;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 40px;
+    }
+
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 30px;
+    }
+
+    .mining-fee-title {
+        font-size: 15pt;
+    }
+
+    .cssWrapTableShapeShiftCoinMenu, .cssWrapTableShapeShiftCoinMenuFrom  {
+        top: 198px;
+        right: 10px;
+    }
+
+    #amountInput {
+        margin-bottom: 7px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cssShapeShiftInfo .cssRates .cssBefore {
+        width: 100%;
+        margin-left: -1px;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssMiddleSpan {
+        width: 50%;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssLastSpan {
+        width: 50%
+    }
+
+    .cssShapeShiftInfo .cssRates .cssMiddleSpan:before {
+        border: 0;
+    }
+
+    .cssShapeShiftInfo .cssMiddleSpan > ul {
+        padding-left: 0 !important;
+    }
+
+    .cssShapeShiftInfo span ul {
+        padding-left: 0.3em !important;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .cssModal.cssShift .cssButtonGroup {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .cssModal.cssShift .cssMiningFeeText {
+        margin-top: 0;
+    }
+
+    .cssShift .cssNotice p {
+        padding-top: 5px;
+    }
+
+    .cssModal.cssShift .cssButtonGroup h2 {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .cssModal.cssShift .cssShiftingParagraph {
+        padding-top: 10px;
+    }
+
+    .cssModal.cssShift .cssSeparator {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-height: 568px) {
+    .modal-bottom .cssShapeShiftConfirmation {
+        font-size: 9pt;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-title,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-top,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-middle,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-bottom {
+        padding: 10px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-logo {
+        display: none;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-top-title {
+        margin-bottom: 10px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 15px 0;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title-description-visible {
+        margin: 5px 0 15px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 20px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom {
+        margin-bottom: 30px;
+        font-size: 9pt;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup input[type=radio]:checked ~ .check::before {
+        background: #000;
+        height: 10px;
+        width: 11px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalMiningFeeText {
+        margin: 10px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalTermsText {
+        margin: 5px;
+        font-size: 11px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation tr.cssMiningTitles {
+        font-size: 13px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .cssButtonGroup tr td {
+        padding-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    .cssShapeShiftInfo .cssRates span {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-height: 640px) {
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-title,
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body-top,
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body-middle,
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body-bottom {
+        padding: 7px !important;
+    }
+
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 30px 5px 0 5px !important;
+    }
+
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .cssButtonGroup tr td {
+        padding-bottom: 0 !important;
+    }
+
+    /* This class should apply if BTC description is not available */
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body-middle-title,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-bottom-title {
+        padding-bottom: 0;
+        margin: 0;
+    }
+
+    /* This class should apply if BTC description is available */
+    .modal-bottom.softKeys .cssShapeShiftConfirmation .modal-body-bottom-title-description-visible {
+        margin: 15px;
+        font-size: 15px;
+        margin-top: 0 !important;
+        padding-top: 0;
+    !important;
+    }
+
+    /*.modal-bottom .cssShapeShiftConfirmation {*/
+    /*font-size: 15px;*/
+    /*}*/
+    .modal-bottom .cssShapeShiftConfirmation .modal-title,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-top,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-middle,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-bottom {
+        padding: 10px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-logo {
+        display: none;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-top-title {
+        margin-bottom: 5px;
+    }
+
+    /* This class should apply if BTC description is not available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 4px 0 8px;
+    }
+
+    /* This class should apply if BTC description is available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title-description-visible {
+        margin: 15px 0;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation tr.cssMiningTitles {
+        font-size: 14px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .cssButtonGroup tr td {
+        padding-bottom: 4% !important;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup input[type=radio]:checked ~ .check::before {
+        background: #000;
+        height: 10px;
+        width: 11px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 25px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalMiningFeeText {
+        margin: 5px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalTermsText {
+        margin: 0 !important;
+        font-size: 9pt !important;
+        line-height: 15pt !important;
+    }
+
+    .amountAbbreviatedNameSend, .amountAbbreviatedNameReceive {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-height: 732px) {
+    .modal-bottom .cssShapeShiftConfirmation {
+        font-size: 16px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-title,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-top,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-middle,
+    .modal-bottom .cssShapeShiftConfirmation .modal-body-bottom {
+        padding: 20px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-top-title {
+        margin-bottom: 15px;
+    }
+
+    /* This class should apply if BTC description is not available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title {
+        margin: 50px 0 15px;
+    }
+
+    /* This class should apply if BTC description is available */
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-title-description-visible {
+        margin: 20px 0;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .modal-body-bottom-description {
+        margin-bottom: 60px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssButtonGroup input[type=radio]:checked ~ .check::before {
+        background: #000000;
+        height: 10px;
+        width: 11px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalMiningFeeText {
+        margin: 10px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .modal-body .cssNotice .cssModalTermsText {
+        margin: 20px;
+        font-size: 10pt;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation tr.cssMiningTitles {
+        font-size: 16px;
+    }
+
+    .modal-bottom .cssShapeShiftConfirmation .cssButtonGroup tr td {
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .cssShapeshiftTab {
+        width: 148px;
+    }
+
+    .cssShapeShiftInfo .cssRates {
+        text-align: start;
+        margin-left: -1px;
+    }
+
+    .cssShapeShiftInfo .cssRates span {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #shapeShiftInfoButton {
+        margin-left: -5px;
+    }
+
+    .cssShapeShiftInfo .cssRates span {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssLastSpan {
+        float: none !important;
+        margin-left: 142px !important;
+    }
+
+    .cssShapeShift .cssShapeShiftPanel {
+        background-size: 85%;
+        margin-bottom: -6px;
+    }
+
+    .cssCurrencyToggleFirst {
+        font-size: 0.8em;
+        bottom: 5px;
+    }
+
+    .cssShapeShiftTogglelist {
+        margin-left: 51px;
+        margin-bottom: 2px;
+    }
+
+    .cssShapeShiftInfo span ul {
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+
+    .cssArrowcoinToCoin {
+        margin-left: 27px;
+        margin-right: 27px;
+        margin-top: 5px;
+    }
+
+    .cssShapeShift .cssDisplayCoinsArrow {
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 2px;
+        cursor: pointer;
+    }
+
+    #SpendableView {
+        width: 50%;
+    }
+
+    .shapeShiftDesktopTab {
+        background-color: #3F3F3F;
+        color: #A9A9A9;
+        text-align: center;
+        width: 209px;
+        height: 60px;
+        line-height: 63px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .shapeShiftHeader {
+        margin-top: -30%;
+    }
+
+    .shapeShiftMax {
+        margin: 0 0 -26px 0;
+    }
+
+    .cssWrapTableShapeShiftCoinMenuFrom {
+        top: 200px;
+        left: 10px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenu {
+        top: 200px;
+        left: 285px
+    }
+
+    .cssCoinText {
+        font-size: 1.3em;
+    }
+
+    .shapeShiftMenuText {
+        top: -8px;
+    }
+
+    .mining-fee-title {
+        font-size: 13pt;
+    }
+
+    #amountInput {
+        margin-bottom: 13px;
+    }
+
+    .mainAmountInputShift {
+        margin-top: 20%;
+    }
+
+    .cssShapeShiftInfo span {
+        display: inline;
+    }
+
+    .cssShapeShiftInfo .cssRates {
+        margin-left: 0;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssMiddleSpan:before {
+        content: none;
+    }
+
+    .desktopPaddingAdjust {
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (min-height: 1000px) and (min-width: 700px) {
+    /* Only For iPad Portrait */
+
+    .cssShapeshiftTab {
+        width: 308px;
+    }
+
+    .mainAmountInputShift {
+        margin-top: 15%;
+    }
+
+    .shapeShiftHeader {
+        margin-top: -21%;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssLastSpan {
+        float: none !Important;
+    }
+
+    .shapeShiftMax {
+        margin-top: 5px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenu {
+        top: 210px;
+        right: 126px;
+    }
+
+    .cssWrapTableShapeShiftCoinMenuFrom {
+        top: 210px;
+        left: 235px;
+    }
+
+    .cssShapeShiftInfo .cssRates {
+        margin-left: -22px;
+    }
+
+    .cssShapeShiftInfo .cssRates .cssBefore {
+        margin-left: 4px;
+    }
+
+    .cssShapeShift .cssShapeShiftPanel {
+        margin-bottom: -5px;
+    }
+
+    #shapeShiftInfoButton {
+        margin-bottom: -4px;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (min-height: 768px) and (max-width: 1024px) and (max-height: 768px){
+    /* Only For iPad Landscape */
+
+    .shapeShiftDesktopTab {
+        width: 204px;
+    }
+}

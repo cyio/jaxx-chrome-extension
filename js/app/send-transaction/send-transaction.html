@@ -1,0 +1,101 @@
+<div class="available">
+    <div class="pageAddressTemplate">
+        <div class="pageAddress cssPageAddress"> <span class="address"></span> </div>
+    </div>
+    <div class="pageAddressesHeader cssAddressFont">
+
+        <style>
+            .pageAddressesHeader.cssAddressFont {
+                font-weight: bold;
+                color: yellow;
+            }
+
+            .pageAddress.cssPageAddress {
+                font-style: italic;
+            }
+
+            .pageAddressesHeader.cssAddressFont>div>img{
+                height: 15px;
+                width: 15px;
+                vertical-align: middle;
+            }
+        </style>
+
+        <div><img src="images/info.png"/> &nbsp; Found Addresses on current Webpage</div>
+    </div>
+    <div class="pageAddressScrollContainer cssAddressScroll">
+        <div class="pageAddresses populatePageAddresses"></div>
+    </div>
+    <div id="keyBoardSectionHideMe">
+        <div id="SendAddressView" class="address cssCameraInput input cssInput wow animated slideInRight cssReceivingAddress" data-wow-duration="0.7s">
+            <input id="receiver_address" type="text" placeholder="Enter Receiving Address" autocorrect="off" autocapitalize="none" autocomplete="false" />
+            <div class="scriptAction imageQR cssImageCamera" specialAction="scanPayment"></div>
+        </div>
+        <!-- Warning Window -->
+        <div class="ethereumChecksumAddressWarningText cssWarningWindow" style="display: none;">
+            <p class="">Invalid Address</p>
+        </div>
+        <!-- Warning Window Ends -->
+        <div id="amountInput" class="amount input cssAmount cssInput cssUnitInput cssTopGap wow animated slideInRight" data-wow-duration="0.7s">
+            <div id="fiatToCrypto" class="unitToggle cssUnitToggle">
+                <div class="imageArrows"></div><span class="symbol"></span></div>
+            <div id="Send_Recieve_Btn" class="button cssButton">
+                <div class="cssSendLabelContainer">
+                    <span class="send label" id="sendLabel">SEND</span>
+                    <span class="shiftingProgress cssShiftingProgress"></span>
+                </div>
+                <span class="receive label" id="receiveLabel">GENERATE</span>
+            </div>
+            <div class="cssPaddingProvider">
+                <div class="cssAmountSendInputWrapper">
+                    <input id="amountSendInput" type="number" class="limit-decimal cssLimit-decimal" placeholder="Enter Amount" autocorrect="off" autocapitalize="none" autocomplete="false" />
+                    <div id="fiatSendValue" class="amountDetails cssAmountDetails"></div>
+                </div>
+            </div>
+        </div>
+        <div id="ShapeShiftView" class="cssStartHidden"></div>
+        <div id="SpendableView" class="spendable cssSpendable wow animated fadeIn" data-wow-duration="0.5s">
+            <div class="scriptAction cssInfo" openModal="spendableInfo"></div>
+            <div class="cssSpendableHeader">
+                Spendable:
+                <span id="spendableFiatCurrency"></span>
+                <span id="SpendableAmount" class="populateSpendable"></span>
+                <span id="spendableCryptoSymbol"></span>
+                <span id="SpendableUndefined" class="processSpendable cssProcessSpendable"></span>
+                <div id="MaxButton" class="cssMax">MAX</div>
+            </div>
+            <div id="advancedTabButton" class="advancedTabButton cssAdvancedTabButton wow animated slideInRight cssStartHidden" data-wow-duration="0.5s"> <img class="advancedBtnImage" src="images/ui_elements/drop-down-icon.svg" alt="advance_arrow"> </div>
+        </div>
+
+        <div id="GasForSpendableWarning" class="ethereumTokenInsufficientGasForSpendableWarningText cssWarningWindowSpendable" style="display: none;">
+            <p class="">One or more of your accounts requires more ETH to be able to transfer.</p>
+        </div>
+    </div>
+    <!-- Advanced Tab Options -->
+    <div id="AdvancedGasEthereumView" class="advancedTabContentEthereum cssGapSmall cssAdvancedTabContentEthereum cssStartHidden" data-wow-duration="0.7s">
+        <div class="cssAdvancedSettings" data-wow-duration="0.7s">Contracts</div>
+        <div class="cssGasPrice" data-wow-duration="0.7s">Gas Limit<span class="gasLimitSuggestion cssGasLimitSuggestion"></span></div>
+        <div id="advanceSendArrow"><img class="advancedBtnImage cssAdvanceSendArrow" src="img/Icon_down.svg" alt="icon_down"></div>
+        <div class="customGasLimit input cssInput cssAdvancedInput" data-wow-duration="0.7s">
+            <input class="inputCustomGasLimit" type="number" autocorrect="off" autocapitalize="none" autocomplete="false" placeholder="21000" />
+        </div>
+        <div class="cssCustomData" data-wow-duration="0.7s">Custom Data</div>
+        <div class="customData input cssInput cssAdvancedInput" data-wow-duration="0.7s">
+            <input id="inputCustomData" type="text" placeholder="Insert Data" autocorrect="off" autocapitalize="none" autocomplete="false" />
+        </div>
+    </div>
+    <!-- Advance Tab Ends  -->
+    <div id="SpendableHelp" class="cssContent">
+    </div>
+    <div class="spendableInfo cssShapeShiftInfoWindow modal cssModal cssFull visible" style="">
+        <div class="cssContent">
+            <div class="scriptAction cssHeader" closemodal="true">Spendable
+                <div class="cssClose cssNoSelect">x</div>
+            </div>
+            <div class="cssItem cssCenter cssShapeShiftInfoModal">
+                <p>"Spendable Balance" is the MAX amount that you can send out of your wallet. Your spendable balance is less than your total balance by the mining fee necessary to execute your transaction. <b>Go to your settings menu to adjust the mining fee you're willing to offer bitcoin miners.</b> Reducing the fee amount you offer may cause significant delays in your transactions. Note that bitcoin mining fees are determined by file size and not by the amount of BTC you're sending. The number of inputs and outputs in your wallet contributes to the file size.</p>
+                <p class="cssLastParagraphShapeShiftInfo"><span>Note also that bitcoin mining fees have risen in recent months due to extreme bitcoin network congestion.</span> </p>
+            </div>
+        </div>
+    </div>
+</div>

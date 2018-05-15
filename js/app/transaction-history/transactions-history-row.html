@@ -1,0 +1,35 @@
+<div id="{{txid}}" class="cssTransactionHistoryRow">
+    <div class="cssTransactionOverview">
+        <div class="cssTransactionLeft">
+            <span class="date cssDate">{{date}}</span><span class="time cssTime">{{time}}</span><br />
+            <span class="cssHeading heading tr-status">{{status}}</span>
+        </div>
+        <div class="cssTransactionRight">
+            <span class="cssTransactionAmmount cssAmount">
+                {{amount}}
+            </span>
+        </div>
+    </div>
+    <div class="cssTransactionDetails">
+        <div class="cssTransactionLeft">
+            <div class="cssTxDetails">
+                <span class="cssHeading">{{from_to}} </span><br/> 
+                <span class="txidShort">{{displayAddress}}</span>
+                <br />
+                <span class="cssHeading">Transaction ID</span><br/>
+                <span class="txidShort">{{block_tx_url}}</span>
+            </div>
+            <div class="imageTransactionCopy cssImageCopy cssNoSelect" data-jaxx-copy-value="{{address}}"></div>
+        </div>
+        <div class="cssTransactionMid">
+            <span class="cssHeading">Confirmations</span><br/> 
+            <span class="txidShort confirmations">{{confirmations}}</span>
+        </div>
+        <div class="cssTransactionRight">
+            <span class="cssHeading">Mining fee</span><br/> 
+            <span class="miningFee">{{miningFee}}</span><br />
+            <span class="cssHeading">Confirmed In Block</span><br/> 
+            <span class="blockHeight">{{block}}</span>
+        </div>
+    </div>
+</div>

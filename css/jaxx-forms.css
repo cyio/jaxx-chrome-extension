@@ -1,0 +1,29 @@
+.input-group .input-group-item, .input-group-item>input{
+    width: 100%;
+}
+
+.input-group{
+    padding-right: 10%;
+}
+
+.input-group-item{
+    height: 40px;
+    margin-bottom: 20px;
+}
+.input-group-item>input{
+    margin-top: 5px;
+    font-size: 16px;
+    height:24px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.input-group-item>input.text-small-1x{
+    font-size: 14px
+}
+.input-group-item>input.text-small-2x{
+    font-size: 12px
+}
+
+

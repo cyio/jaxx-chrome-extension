@@ -1,0 +1,96 @@
+<!--<script type="text/javascript" src="js/app/mining-fee/mining-fee-helper.js"></script>-->
+
+<div id="BTCMiningFeeBackNavigation" class="imageReturn cssImageReturn"></div>
+    <div class="scriptAction cssHeader" popSettings="true">BTC Mining Fee
+        <div id="BTCMiningFeeClose" class="cssClose">x</div>
+    </div>
+    <div class="cssItem cssBackup cssExpandableText cssInitialHeight expandableDetailsAncestor pbn">
+        <div class="expandableDetailsHeader">
+            <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" onclick="remoteToggleNearbyExpandableDetails(this)"></div>
+            <div class="optionTrigger cssOptionTrigger">
+                <div class="optionHeading cssOptionHeading">
+                    <label>You have the option to select the confirmation speed of your bitcoin transactions</label>
+                </div>
+            </div>
+        </div>
+        <div class="expandableDetailsElement cssExpandableDetailsElement" expandedHeight='[[355, "140px"], [500, "120px"], [2000, "100px"]]'>
+            <div class="cssDescription toggler cssToggler">
+                <p class="cssIntroScreenHeading"> Please select an option below to determine the speed your transactions will be executed at. Faster transactions require higher fees. </p>
+            </div>
+        </div>
+    </div>
+    <div class="miningOptionBody cssMiningOptionBody">
+        <div class="customMiningFeeSelectionOption settingsResetCache expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight cssStartHidden" specialAction="jaxx_controller.clickMiningOption">
+            <!-- Add code to enable special action -->
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <input type="radio" class="scriptAction" id="customMiningFeeMainMenu" name="miningFeeMainMenuButton" value="customMiningFeeMainMenu">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" onclick="remoteToggleNearbyExpandableDetails(this)"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading">
+                        <label>CUSTOM</label>
+                    </div>
+                </div>
+                <div class="bitcoinBox cssBitcoinBox"></div>
+                <input class="enterCustomMiningFee cssEnterCustomMiningFee" type="text" name="fname">
+                <div class="check"></div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading">Check this box for the custom option.</p>
+                </div>
+            </div>
+        </div>
+        <div class="fastMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOption">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <!--specialAction="jaxx_ui.toggleNearbyExpandableDetails" -->
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" onclick="remoteToggleNearbyExpandableDetails(this)"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                        <input data-id="fast" type="radio" class="scriptAction" id="fastMiningFeeMainMenu" name="miningFeeMainMenuButton" value="fastMiningFeeMainMenu">
+                        <label>FAST (Pricey Fees)</label>
+                        <div class="check"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading introScreenHeading">We recommend choosing this option for transactions that you wish to confirm most likely in the next block.</p>
+                </div>
+            </div>
+        </div>
+        <div class="averageMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOption">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" onclick="remoteToggleNearbyExpandableDetails(this)"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                        <input data-id="average" type="radio" class="scriptAction" id="averageMiningFeeMainMenu" name="miningFeeMainMenuButton" value="averageMiningFeeMainMenu">
+                        <label>AVERAGE (Normal Fees)</label>
+                        <div class="check"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading introScreenHeading">We expect transactions to confirm in approximately 3 blocks; however, it may take longer depending on the level of congestion on the blockchain network.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slowMiningFeeSelectionOption settingsResetCache menuOptionDisplayPrivateKeys expandableText cssExpandableText scriptAction cssOpacity expandableDetailsAncestor cssInitialHeight" specialAction="jaxx_controller.clickMiningOption">
+            <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+                <div class="triangleArrow cssTriangleArrow scriptAction stopPropagation" onclick="remoteToggleNearbyExpandableDetails(this)"></div>
+                <div class="optionTrigger cssOptionTrigger">
+                    <div class="optionHeading cssOptionHeading cssMiningFeeRadioBtn">
+                        <input data-id="slow" type="radio" class="scriptAction" id="slowMiningFeeMainMenu" name="miningFeeMainMenuButton" value="slowMiningFeeMainMenu" specialaction="JaxxController.prototype.clickOptionForMiningFee">
+                        <label>SLOW (Cheap Fees)</label>
+                        <div class="check"></div>
+                        <div class="mining-fee-info">We do not recommend to choose Slow mining fee.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cssExpandableDetailsElement expandableDetailsElement" expandedheight="100px">
+                <div class="toggler cssToggler">
+                    <p class="cssIntroScreenHeading introScreenHeading">A smaller mining fee will apply. We do not recommend this option as it may take days to receive a confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </div>

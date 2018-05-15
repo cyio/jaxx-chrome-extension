@@ -1,0 +1,27 @@
+<div class="scriptAction imageReturn cssImageReturn" popSettings="true"></div>
+<div class="scriptAction cssHeader heading" popSettings="true">Transfer Paper Wallet
+    <div class="cssClose scriptAction" clearSettings="true" specialaction="toggleMainMenu">x</div>
+</div>
+<div class="settingsResetCache expandableText cssExpandableText scriptAction cssOpacity cssInitialHeight expandableDetailsAncestor">
+    <div class="expandableDetailsHeader cssExpandableDetailsHeader">
+        <div class="optionTrigger cssOptionTrigger">
+            <div class="optionHeading cssOptionHeading">
+                <label>Scan or type your private key (QR Code).</label>
+            </div>
+        </div>
+    </div>
+    <div class="expandableDetailsElement cssExpandableDetailsElement" expandedheight='[[430, "215px"], [574, "170px"], [760, "155px"], [2000, "130px"]]'>
+        <div class="toggler cssToggler">
+        </div>
+    </div>
+</div>
+<div class="cssbackupTab2 cssOpacity">
+    <!-- The following div is where the user enters their private key so that they can load their paper wallet -->
+    <div class="cssSweepEntryInput cssCameraInput cssInput cssGapSmall">
+        <input id="privateKeySweep" placeholder="Enter Private Key" autocorrect="off" autocapitalize="none" autocomplete="false" />
+        <div class="scriptAction imageCamera cssImageCamera" specialAction="scanPrivateKey" targetInput=".settings.sweepPrivateKey input"></div>
+    </div>
+    <br> </div>
+<div class="cssCenter cssBackContinue">
+    <div class="sweepNextButton scriptAction cssStartHidden pairDeviceShowMnemonicButton cssBtnIntroRight"><span class="cssTextFeedback">Next</span></div>
+</div>
