@@ -118,6 +118,9 @@ function updateCurrentConfig(config) {
               try {
                 var config = JSON.parse(atob(result.data));
                 if (config.ver) {
+                    if (config.coins[9].symbol === 'BCH') {
+                        config.coins[9].blockexplorer_url = 'https://bch.btc.com/{{txid}}'
+                    }
                   if (config.ver > JSON.parse(localStorage.getItem('jaxxconfig')).ver) {
                     localStorage.setItem('jaxxconfig', JSON.stringify(config));
                     localStorage.setItem('lastJaxxConfigUpdate', String(Date.now()));
